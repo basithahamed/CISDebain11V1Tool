@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Function to check if the script is running with root privileges
+check_root_privileges() {
+    if [ "$EUID" -ne 0 ]; then
+        echo "This script must be run with root privileges. Use sudo or run as root user."
+        exit 1
+    fi
+}
+
 # Function to call a check script and get the result
 chmod +x controls/*/*.sh
 check() {
@@ -38,6 +46,9 @@ calculate_percentage() {
         echo "0"
     fi
 }
+
+# Check for root privileges
+check_root_privileges
 
 # Initialize variables for counting passed and failed checks
 total_checks_automated_level1=0
