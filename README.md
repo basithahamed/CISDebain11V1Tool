@@ -5,7 +5,9 @@ This Tool Is to benchmark the CIS score of the Debain 11 v1 CIS
 <br>
 Steps to Run the this tool 
 <br>
-`chmod +x audit`
+~~~
+chmod +x audit
+~~~
 <br>
 ```
 ./audit.sh 
