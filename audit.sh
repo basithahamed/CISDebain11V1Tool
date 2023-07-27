@@ -29,6 +29,12 @@ print_colored() {
         echo -e "\033[0;31m$2\033[0m" # Red color for "fail"
     elif [ "$1" = "blue" ]; then
         echo -e "\033[0;34m$2\033[0m" # Blue color for "blue"
+    elif [ "$1" = "flashy_yellow" ]; then
+        echo -e "\033[1;33m$2\033[0m" # Flashy Yellow color for "flashy_yellow"
+    elif [ "$1" = "flashy_magenta" ]; then
+        echo -e "\033[1;35m$2\033[0m" # Flashy Magenta color for "flashy_magenta"
+    elif [ "$1" = "flashy_cyan" ]; then
+        echo -e "\033[1;36m$2\033[0m" # Flashy Cyan color for "flashy_cyan"
     else
         echo "$2"
     fi
@@ -63,7 +69,7 @@ passed_checks_manual_level2=0
 
 # Function to print the check result for Level1-Automated
 print_result_automated_level1() {
-    echo -e "Level1-Automated\n"
+    echo -e "$(print_colored "flashy_yellow" "Level1-Automated")\n"
     if [ -n "$(find ./controls/level1-automated -maxdepth 1 -type f -name '*_check.sh')" ]; then
         for check_script in ./controls/level1-automated/*_check.sh; do
             result=$(check "$check_script")
@@ -80,7 +86,7 @@ print_result_automated_level1() {
 
 # Function to print the check result for Level1-Manual
 print_result_manual_level1() {
-    echo -e "\nLevel1-Manual\n"
+    echo -e "\n$(print_colored "flashy_magenta" "Level1-Manual")\n"
     if [ -n "$(find ./controls/level1-manual -maxdepth 1 -type f -name '*_check.sh')" ]; then
         for check_script in ./controls/level1-manual/*_check.sh; do
             result=$(check "$check_script")
@@ -97,7 +103,7 @@ print_result_manual_level1() {
 
 # Function to print the check result for Level2-Automated
 print_result_automated_level2() {
-    echo -e "\nLevel2-Automated\n"
+    echo -e "\n$(print_colored "flashy_cyan" "Level2-Automated")\n"
     if [ -n "$(find ./controls/level2-automated -maxdepth 1 -type f -name '*_check.sh')" ]; then
         for check_script in ./controls/level2-automated/*_check.sh; do
             result=$(check "$check_script")
@@ -114,7 +120,7 @@ print_result_automated_level2() {
 
 # Function to print the check result for Level2-Manual
 print_result_manual_level2() {
-    echo -e "\nLevel2-Manual\n"
+    echo -e "\n$(print_colored "flashy_yellow" "Level2-Manual")\n"
     if [ -n "$(find ./controls/level2-manual -maxdepth 1 -type f -name '*_check.sh')" ]; then
         for check_script in ./controls/level2-manual/*_check.sh; do
             result=$(check "$check_script")
@@ -152,11 +158,11 @@ percentage_automated_level2=$(calculate_percentage "$passed_checks_automated_lev
 percentage_manual_level2=$(calculate_percentage "$passed_checks_manual_level2" "$total_checks_manual_level2")
 
 # Display the summary with the score and percentage information in white color
-echo -e "\033[0mLevel1-Automated Score: $percentage_automated_level1%"
-echo -e "Level1-Manual Score: $percentage_manual_level1%"
+echo -e "\033[0m$(print_colored "flashy_yellow" "Level1-Automated Score: $percentage_automated_level1%")"
+echo -e "$(print_colored "flashy_magenta" "Level1-Manual Score: $percentage_manual_level1%")"
 
-echo -e "\nLevel2-Automated Score: $percentage_automated_level2%"
-echo -e "Level2-Manual Score: $percentage_manual_level2%"
+echo -e "\n$(print_colored "flashy_cyan" "Level2-Automated Score: $percentage_automated_level2%")"
+echo -e "$(print_colored "flashy_yellow" "Level2-Manual Score: $percentage_manual_level2%")"
 
 total_checks_automated=$((total_checks_automated_level1 + total_checks_automated_level2))
 passed_checks_automated=$((passed_checks_automated_level1 + passed_checks_automated_level2))
@@ -167,7 +173,7 @@ echo -e "Automated Checks Passed: $passed_checks_automated"
 # Calculate the overall percentage of automated checks passed
 percentage_overall_automated=$(calculate_percentage "$passed_checks_automated" "$total_checks_automated")
 
-echo -e "Automated Checks Percentage Passed: $percentage_overall_automated%"
+echo -e "$(print_colored "flashy_magenta" "Automated Checks Percentage Passed: $percentage_overall_automated%")"
 
 # Check if the automated checks meet compliance requirements based on the overall percentage
 if [ "$percentage_overall_automated" -eq 100 ]; then
@@ -189,7 +195,7 @@ echo -e "Manual Checks Passed: $passed_checks_manual"
 # Calculate the overall percentage of manual checks passed
 percentage_overall_manual=$(calculate_percentage "$passed_checks_manual" "$total_checks_manual")
 
-echo -e "Manual Checks Percentage Passed: $percentage_overall_manual%"
+echo -e "$(print_colored "flashy_cyan" "Manual Checks Percentage Passed: $percentage_overall_manual%")"
 
 # Check if the manual checks meet compliance requirements based on the overall percentage
 if [ "$percentage_overall_manual" -eq 100 ]; then
@@ -213,7 +219,7 @@ echo -e "Failed Checks: $((total_checks - total_passed))"
 # Calculate the overall percentage of checks passed
 percentage_overall=$(calculate_percentage "$total_passed" "$total_checks")
 
-echo -e "Percentage Passed: $percentage_overall%"
+echo -e "$(print_colored "flashy_yellow" "Percentage Passed: $percentage_overall%")"
 
 # Check if the system meets compliance requirements based on the overall percentage
 if [ "$percentage_overall" -eq 100 ]; then
