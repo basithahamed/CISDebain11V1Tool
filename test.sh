@@ -1,24 +1,44 @@
 #!/usr/bin/env bash
 
-output=""
-grubfile=$(find /boot -type f \( -name 'grubenv' -o -name 'grub.conf' -o -name 'grub.cfg' \) -exec grep -Pl -- '^\h*(kernelopts=|linux|kernel)' {} \;)
-searchloc="/run/sysctl.d/*.conf /etc/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf"
+check_tcp_syn_cookies() {
+    local l_output=""
+    local l_output2=""
+    local l_parlist="net.ipv4.tcp_syncookies=1"
+    local l_searchloc="/run/sysctl.d/*.conf /etc/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf $([ -f /etc/default/ufw ] && awk -F= '/^\s*IPT_SYSCTL=/{print $2}' /etc/default/ufw)"
 
-if [ -s "$grubfile" ]; then
-    if ! grep -P -- "^\h*(kernelopts=|linux|kernel)" "$grubfile" | grep -vq -- ipv6.disable=1; then
-        output="IPv6 Disabled in \"$grubfile\""
-    fi
-fi
+    KPC() {
+        local l_krp="$(sysctl "$l_kpname" | awk -F= '{print $2}' | xargs)"
+        local l_pafile="$(grep -Psl -- "^\h*$l_kpname\h*=\h*$l_kpvalue\b\h*(#.*)?$" "$l_searchloc")"
+        local l_fafile="$(grep -s -- "^\s*$l_kpname" "$l_searchloc" | grep -Pv -- "\h*=\h*$l_kpvalue\b\h*" | awk -F: '{print $1}')"
 
-if grep -Pqs -- "^\h*net\.ipv6\.conf\.all\.disable_ipv6\h*=\h*1\h*(#.*)?$" $searchloc && \
-    grep -Pqs -- "^\h*net\.ipv6\.conf\.default\.disable_ipv6\h*=\h*1\h*(#.*)?$" $searchloc && \
-    sysctl net.ipv6.conf.all.disable_ipv6 | grep -Pqs -- "^\h*net\.ipv6\.conf\.all\.disable_ipv6\h*=\h*1\h*(#.*)?$" && \
-    sysctl net.ipv6.conf.default.disable_ipv6 | grep -Pqs -- "^\h*net\.ipv6\.conf\.default\.disable_ipv6\h*=\h*1\h*(#.*)?$"; then
-    if [ -n "$output" ]; then
-        output="$output, and in sysctl config"
+        if [ "$l_krp" = "$l_kpvalue" ]; then
+            l_output="$l_output\n - \"$l_kpname\" is set to \"$l_kpvalue\" in the running configuration"
+        else
+            l_output2="$l_output2\n - \"$l_kpname\" is set to \"$l_krp\" in the running configuration"
+        fi
+
+        if [ -n "$l_pafile" ]; then
+            l_output="$l_output\n - \"$l_kpname\" is set to \"$l_kpvalue\" in \"$l_pafile\""
+        else
+            l_output2="$l_output2\n - \"$l_kpname=$l_kpvalue\" is not set in a kernel parameter configuration file"
+        fi
+
+        [ -n "$l_fafile" ] && l_output2="$l_output2\n - \"$l_kpname\" is set incorrectly in \"$l_fafile\""
+    }
+
+    for l_kpe in $l_parlist; do
+        local l_kpname="$(awk -F= '{print $1}' <<< "$l_kpe")"
+        local l_kpvalue="$(awk -F= '{print $2}' <<< "$l_kpe")"
+        KPC
+    done
+
+    if [ -z "$l_output2" ]; then
+        echo -e "\n- Audit Result:\n ** PASS **\n$l_output\n"
     else
-        output="IPv6 disabled in sysctl config"
+        echo -e "\n- Audit Result:\n ** FAIL **\n - Reason(s) for audit failure:\n$l_output2\n"
+        [ -n "$l_output" ] && echo -e "Correctly set:\n$l_output\n"
     fi
-fi
+}
 
-[ -n "$output" ] && echo -e "\n$output\n" || echo -e "\nIPv6 is enabled on the system\n"
+# Call the function to check the audit rule
+check_tcp_syn_cookies
