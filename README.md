@@ -5,4 +5,6 @@ This Tool Is to benchmark the CIS score of the Debain 11 v1 CIS
 <br>
 Steps to Run the this tool 
 
-``` cpp ```
+``` chmor +x audit.sh ```
+<br>
+``` ./audit.sh ```
