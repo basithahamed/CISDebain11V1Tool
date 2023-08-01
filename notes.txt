@@ -1,0 +1,79 @@
+Combined Compliance Scores:
+------------------------
+Recommended and Must Have Controls
+------------------------
+Level1-Automated Total Checks:  163
+Level1-Automated Passed Checks: 70
+Level1-Automated Failed Checks: 93
+Level1-Automated Score:         42%
+Level2-Automated Total Checks:  52
+Level2-Automated Passed Checks: 12
+Level2-Automated Failed Checks: 40
+Level2-Automated Score:         23%
+Combined Automated Total Checks:  215
+Combined Automated Passed Checks: 82
+Combined Automated Failed Checks: 133
+Combined Automated Score:         38%
+------------------------
+Recommended Controls
+------------------------
+Level1-Manual Total Checks:      7
+Level1-Manual Passed Checks:     4
+Level1-Manual Failed Checks:     3
+Level1-Manual Score:             57%
+Level2-Manual Total Checks:      1
+Level2-Manual Passed Checks:     1
+Level2-Manual Failed Checks:     0
+Level2-Manual Score:             100%
+Combined Manual Total Checks:    8
+Combined Manual Passed Checks:   5
+Combined Manual Failed Checks:   3
+Combined Manual Score:           62%
+------------------------
+Overall Compliance Score:
+------------------------
+Overall Total Checks:      223
+Overall Passed Checks:     87
+Overall Failed Checks:     136
+Overall Score:             39%
+
+
+
+
+
+
+
+
+
+
+level1-automated pass with wc=71
+with audit.sh = 70
+
+
+level1-automated fail with wc=86
+with audit.sh = 93
+
+
+
+level1-manual pass with wc=4 
+with audit.sh =4
+
+level1-automated Total scripts=163
+with audit.sh=163
+level1-manual Total scripts=7
+with audit.sh=7
+
+level1-manual fail with wc=3
+with audit.sh = 3
+
+level2-automated pass with wc=12
+with audit.sh = 12
+level2-automated fail with wc=44
+with audit.sh = 43
+
+level2-automated Total scripts=52
+with audit.sh=52    
+somet
+
+
+5.3.4_check.sh
