@@ -81,7 +81,7 @@ function calculate()
 
     echo "------------------------"
     echo "Recommended Controls"
-    echo -e "\n"
+    
 
     #calculating the Level1 Manual Score
     level1manualpassed=$(cat level1-manual-passed.txt | wc -l)
@@ -94,7 +94,7 @@ function calculate()
     echo "Level1-Manual Percentage = $passpercentagelevel1manual%"
    
     #calculating the Level2 Automated Score
-    echo "Level 2 Scores"
+    
     level2manualpassed=$(cat level2-manual-passed.txt | wc -l)
     echo "Level2-Manual Passed Controls = $level2manualpassed"
     level2manualfailed=$(cat level2-manual-failed.txt | wc -l)
@@ -110,5 +110,3 @@ function calculate()
 
 
 calculate
-# level1-manual
-# level2-automated
