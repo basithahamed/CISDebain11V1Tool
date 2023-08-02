@@ -10,10 +10,10 @@ check_actions_as_another_user() {
     &&(/ key= *[!-~]* *$/||/ -k *[!-~]* *$/)' /etc/audit/rules.d/*.rules)
 
     if [ -n "$audit_rules_output" ]; then
-        echo -e "\n4.1.3.2 Ensure actions as another user are always logged - \e[32mPass\e[0m"
+        echo -e "\n4.1.3.2 Ensure actions as another user are always logged - \e[32mpassed\e[0m"
         echo -e "\nResult:\n$audit_rules_output\n"
     else
-        echo -e "\n4.1.3.2 Ensure actions as another user are always logged - \e[31mFail\e[0m"
+        echo -e "\n4.1.3.2 Ensure actions as another user are always logged - \e[31mfailed\e[0m"
     fi
 }
 

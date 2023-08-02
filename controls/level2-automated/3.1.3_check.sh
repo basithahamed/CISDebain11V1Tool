@@ -13,7 +13,7 @@ check_dccp_disabled() {
 
     # Check if the module exists on the system
     if ! check_dccp_installed; then
-        echo -e "\n3.1.3 Ensure DCCP is disabled --> \e[32mPASS\e[0m"
+        echo -e "\n3.1.3 Ensure DCCP is disabled --> \e[32mpassed\e[0m"
         echo -e "DCCP is not installed.\n"
         return 0
     fi
@@ -43,11 +43,11 @@ check_dccp_disabled() {
 
     # Report results. If no failures output in l_output2, we pass
     if [ -z "$l_output2" ]; then
-        echo -e "\n3.1.3 Ensure DCCP is disabled --> \e[32mPASS\e[0m"
+        echo -e "\n3.1.3 Ensure DCCP is disabled --> \e[32mpassed\e[0m"
         echo -e "DCCP is disabled.\n"
         return 0
     else
-        echo -e "\n3.1.3 Ensure DCCP is disabled --> \e[31mFAIL\e[0m"
+        echo -e "\n3.1.3 Ensure DCCP is disabled --> \e[31mfailed\e[0m"
         echo -e "DCCP is enabled or not disabled.\n"
         [ -n "$l_output" ] && echo -e "\n$l_output\n"
         return 1

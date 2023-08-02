@@ -15,14 +15,14 @@ check_dac_permission_mod_events() {
         done
 
         if [ $found -eq 1 ]; then
-            echo -e "\n4.1.3.9 Ensure discretionary access control permission modification events are collected - \e[32mPass\e[0m"
+            echo -e "\n4.1.3.9 Ensure discretionary access control permission modification events are collected - \e[32mpassed\e[0m"
             echo -e "Verify the output matches:\n$output"
         else
-            echo -e "\n4.1.3.9 Ensure discretionary access control permission modification events are collected - \e[31mFail\e[0m"
+            echo -e "\n4.1.3.9 Ensure discretionary access control permission modification events are collected - \e[31mfailed\e[0m"
             echo "No matching rules found in audit rules."
         fi
     else
-        echo -e "\n4.1.3.9 Ensure discretionary access control permission modification events are collected - \e[31mFail\e[0m"
+        echo -e "\n4.1.3.9 Ensure discretionary access control permission modification events are collected - \e[31mfailed\e[0m"
         echo "ERROR: Variable 'UID_MIN' is unset."
     fi
 }

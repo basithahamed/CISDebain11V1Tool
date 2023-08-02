@@ -15,10 +15,10 @@ check_on_disk_usermod_rules() {
 
     # Check if usermod_rules is not empty
     if [ -n "$usermod_rules" ]; then
-        echo -e "\n4.1.3.18 Ensure successful and unsuccessful attempts to use the usermod command are recorded --> \e[32mPass\e[0m\n"
+        echo -e "\n4.1.3.18 Ensure successful and unsuccessful attempts to use the usermod command are recorded --> \e[32mpassed\e[0m\n"
         echo -e "On-disk configuration:\n$usermod_rules\n"
     else
-        echo -e "\n4.1.3.18 Ensure successful and unsuccessful attempts to use the usermod command are recorded --> \e[31mFail\e[0m\n"
+        echo -e "\n4.1.3.18 Ensure successful and unsuccessful attempts to use the usermod command are recorded --> \e[31mfailed\e[0m\n"
         echo -e "Reason: The audit rule for usermod command is not found or is incorrect.\n"
     fi
 }

@@ -23,8 +23,8 @@ check_audit_backlog_limit() {
 output=$(find /boot -type f -name 'grub.cfg' -exec grep -Ph -- '^\h*linux' {} + | grep -Pv 'audit_backlog_limit=\d+\b')
 
 if [ -z "$output" ]; then
-    echo -e "4.1.1.4 Ensure audit_backlog_limit is sufficient - \e[32mPass\e[0m"
+    echo -e "4.1.1.4 Ensure audit_backlog_limit is sufficient - \e[32mpassed\e[0m"
 else
-    echo -e "4.1.1.4 Ensure audit_backlog_limit is sufficient - \e[31mFail\e[0m"
+    echo -e "4.1.1.4 Ensure audit_backlog_limit is sufficient - \e[31mfailed\e[0m"
     echo -e "\nReason(s) for audit failure:\n$output\n"
 fi

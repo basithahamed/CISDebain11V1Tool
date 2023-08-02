@@ -13,10 +13,10 @@ check_on_disk_login_logout_rules() {
 
     # Check if login_logout_rules is not empty
     if [ -n "$login_logout_rules" ]; then
-        echo -e "\n4.1.3.12 Ensure login and logout events are collected --> \e[32mPass\e[0m\n"
+        echo -e "\n4.1.3.12 Ensure login and logout events are collected --> \e[32mpassed\e[0m\n"
         echo -e "On-disk configuration:\n$login_logout_rules\n"
     else
-        echo -e "\n4.1.3.12 Ensure login and logout events are collected --> \e[31mFail\e[0m\n"
+        echo -e "\n4.1.3.12 Ensure login and logout events are collected --> \e[31mfailed\e[0m\n"
         echo -e "Reason: The audit rule for login and logout events is not found or is incorrect.\n"
     fi
 }

@@ -11,9 +11,9 @@ check_auditd_installation() {
     done
 
     if [ -z "$missing_packages" ]; then
-        echo -e "4.1.1.1 Ensure auditd is installed - \e[32mPass\e[0m"
+        echo -e "4.1.1.1 Ensure auditd is installed - \e[32mpassed\e[0m"
     else
-        echo -e "4.1.1.1 Ensure auditd is installed - \e[31mFail\e[0m"
+        echo -e "4.1.1.1 Ensure auditd is installed - \e[31mfailed\e[0m"
         echo -e "\nMissing packages:$missing_packages\n"
     fi
 }

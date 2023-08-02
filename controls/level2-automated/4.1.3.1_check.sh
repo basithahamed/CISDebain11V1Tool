@@ -8,10 +8,10 @@ check_sudoers_changes() {
     &&(/ key= *[!-~]* *$/||/ -k *[!-~]* *$/)' /etc/audit/rules.d/*.rules)
 
     if [ -n "$audit_rules_output" ]; then
-        echo -e "\n4.1.3.1 Ensure changes to system administration scope (sudoers) is collected - \e[32mPass\e[0m"
+        echo -e "\n4.1.3.1 Ensure changes to system administration scope (sudoers) is collected - \e[32mpassed\e[0m"
         echo -e "\nResult:\n$audit_rules_output\n"
     else
-        echo -e "\n4.1.3.1 Ensure changes to system administration scope (sudoers) is collected - \e[31mFail\e[0m"
+        echo -e "\n4.1.3.1 Ensure changes to system administration scope (sudoers) is collected - \e[31mfailed\e[0m"
     fi
 }
 

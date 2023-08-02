@@ -17,10 +17,10 @@ check_on_disk_mac_rules() {
 
     # Check if mac_rules is not empty
     if [ -n "$mac_rules" ]; then
-        echo -e "\n4.1.3.14 Ensure events that modify the system's Mandatory Access Controls are collected --> \e[32mPass\e[0m\n"
+        echo -e "\n4.1.3.14 Ensure events that modify the system's Mandatory Access Controls are collected --> \e[32mpassed\e[0m\n"
         echo -e "On-disk configuration:\n$mac_rules\n"
     else
-        echo -e "\n4.1.3.14 Ensure events that modify the system's Mandatory Access Controls are collected --> \e[31mFail\e[0m\n"
+        echo -e "\n4.1.3.14 Ensure events that modify the system's Mandatory Access Controls are collected --> \e[31mfailed\e[0m\n"
         echo -e "Reason: The audit rule for MAC modification events is not found or is incorrect.\n"
     fi
 }

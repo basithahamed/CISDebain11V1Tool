@@ -73,8 +73,7 @@ check_source_routed_packets_not_accepted() {
         else
             echo -e "\n3.3.1 Ensure source routed packets are not accepted --> \e[31mfailed\e[0m"
             echo -e "Source routed packets are accepted or not disabled.\n"
-            [ -n "$l_output" ] && echo -e "Failed checks:\n$l_output\n"
-            echo -e "Reason(s) for audit failure:\n$l_output2\n"
+           
         fi
     }
 }

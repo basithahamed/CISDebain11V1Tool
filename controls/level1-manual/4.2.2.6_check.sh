@@ -17,9 +17,9 @@ check_rsyslog_remote_logging() {
     fi
 
     if $old_format_found || $new_format_found; then
-        echo -e "\n4.2.2.6 Ensure rsyslog is configured to send logs to a remote log host --> \e[32mPASS\e[0m"
+        echo -e "\n4.2.2.6 Ensure rsyslog is configured to send logs to a remote log host --> \e[32mpassed\e[0m"
     else
-        echo -e "\n4.2.2.6 Ensure rsyslog is configured to send logs to a remote log host --> \e[31mFAIL\e[0m"
+        echo -e "\n4.2.2.6 Ensure rsyslog is configured to send logs to a remote log host --> \e[31mfailed\e[0m"
     fi
 }
 

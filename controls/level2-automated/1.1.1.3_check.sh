@@ -5,7 +5,7 @@ check_udf() {
     if lsmod | grep -q '^udf\s'; then
         echo -e "1.1.1.3 Ensure mounting of udf filesystems is disabled --> \033[0;31mfailed\033[0m"
     else
-        echo -e "1.1.1.3 Ensure mounting of udf filesystems is disabled --> \033[0;32mpass\033[0m"
+        echo -e "1.1.1.3 Ensure mounting of udf filesystems is disabled --> \033[0;32mpassed\033[0m"
     fi
 }
 

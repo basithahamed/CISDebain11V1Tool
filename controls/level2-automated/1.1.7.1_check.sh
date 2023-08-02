@@ -4,7 +4,7 @@
 check_separate_partition_home() {
     mount_point=$(df -P /home | tail -1 | awk '{print $6}')
     if [ "$mount_point" != "/" ]; then
-        echo -e "1.1.7.1 Ensure separate partition exists for /home --> \033[0;32mpass\033[0m"
+        echo -e "1.1.7.1 Ensure separate partition exists for /home --> \033[0;32mpassed\033[0m"
     else
         echo -e "1.1.7.1 Ensure separate partition exists for /home --> \033[0;31mfailed\033[0m"
     fi

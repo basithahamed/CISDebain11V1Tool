@@ -20,9 +20,9 @@ check_audit_log_automatic_deletion() {
 result=$(check_audit_log_automatic_deletion)
 
 if [ "$result" = "audit logs are not automatically deleted" ]; then
-    echo -e "4.1.2.2 Ensure audit logs are not automatically deleted - \e[32mPass\e[0m"
+    echo -e "4.1.2.2 Ensure audit logs are not automatically deleted - \e[32mpassed\e[0m"
     echo -e "\nResult:\n$result\n"
 else
-    echo -e "4.1.2.2 Ensure audit logs are not automatically deleted - \e[31mFail\e[0m"
+    echo -e "4.1.2.2 Ensure audit logs are not automatically deleted - \e[31mfailed\e[0m"
     echo -e "\nResult:\n$result\n"
 fi

@@ -24,9 +24,9 @@ check_audit_tools_ownership() {
     done
 
     if [ "$has_failures" -eq 0 ]; then
-        echo -e "4.1.4.10 Ensure audit tools belong to group root --> \e[32mPASS\e[0m"
+        echo -e "4.1.4.10 Ensure audit tools belong to group root --> \e[32mpassed\e[0m"
     else
-        echo -e "4.1.4.10 Ensure audit tools belong to group root --> \e[31mFAIL\e[0m"
+        echo -e "4.1.4.10 Ensure audit tools belong to group root --> \e[31mfailed\e[0m"
         echo -e "$l_unauthorized_files\n"
     fi
 }

@@ -23,11 +23,11 @@ check_chrony_config() {
   done < <(grep -Pr --include=*.{sources,conf} '^\h*(pool|server)\h+\H+' /etc/chrony/)
 
   if [ "$pool_lines" -ge 1 ] && [ "$server_lines" -ge 3 ]; then
-    echo -e "\n2.1.2 Ensure chrony is configured with authorized timeserver --> \e[32mPASS\e[0m"
+    echo -e "\n2.1.2 Ensure chrony is configured with authorized timeserver --> \e[32mpassed\e[0m"
     echo -e "Authorized timeservers are configured in the chrony configuration:"
     echo -e "$output\n"
   else
-    echo -e "\n2.1.2 Ensure chrony is configured with authorized timeserver --> \e[31mFAIL\e[0m"
+    echo -e "\n2.1.2 Ensure chrony is configured with authorized timeserver --> \e[31mfailed\e[0m"
     echo -e "Authorized timeservers are not configured in the chrony configuration.\n"
   fi
 }

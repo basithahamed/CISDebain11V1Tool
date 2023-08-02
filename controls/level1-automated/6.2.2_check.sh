@@ -13,7 +13,7 @@ check_password_not_empty() {
 }
 
 # Initialize a variable to track the overall result
-overall_result="passed"
+overall_result="    \033[0;32mpassed\033[0m"
 
 # Check each user in /etc/shadow for empty password fields
 while IFS=: read -r user _; do

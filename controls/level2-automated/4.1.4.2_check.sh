@@ -18,13 +18,13 @@ check_audit_log_ownership() {
         done < <(find "$l_audit_log_dir" -type f ! -user root -print0)
 
         if [ "$l_wrong_ownership" = true ]; then
-            echo -e "4.1.4.2 Ensure only authorized users own audit log files --> \e[31mFAIL\e[0m"
+            echo -e "4.1.4.2 Ensure only authorized users own audit log files --> \e[31mfailed\e[0m"
             echo -e "\nAudit log files not owned by root user:\n$l_files_wrong_ownership\n"
         else
-            echo -e "4.1.4.2 Ensure only authorized users own audit log files --> \e[32mPASS\e[0m"
+            echo -e "4.1.4.2 Ensure only authorized users own audit log files --> \e[32mpassed\e[0m"
         fi
     else
-        echo -e "4.1.4.2 Ensure only authorized users own audit log files --> \e[31mFAIL\e[0m"
+        echo -e "4.1.4.2 Ensure only authorized users own audit log files --> \e[31mfailed\e[0m"
         echo -e "\n/etc/audit/auditd.conf file not found!\n"
     fi
 }

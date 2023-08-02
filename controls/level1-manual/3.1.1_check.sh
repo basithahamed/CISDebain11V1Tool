@@ -28,7 +28,7 @@ check_ipv6_enabled() {
     echo "$output"
     return 1
   else
-    echo -e "\n3.1.1 Ensure system is checked to determine if IPv6 is enabled --> \033[0;32mPASS\033[0m"
+    echo -e "\n3.1.1 Ensure system is checked to determine if IPv6 is enabled --> \033[0;32mpassed\033[0m"
     echo "IPv6 is enabled on the system."
     return 0
   fi

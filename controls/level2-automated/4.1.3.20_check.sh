@@ -7,10 +7,10 @@ check_audit_immutable() {
 
     # Check if audit_immutable_rule is not empty
     if [ -n "$audit_immutable_rule" ]; then
-        echo -e "\n4.1.3.20 Ensure the audit configuration is immutable --> \e[32mPass\e[0m\n"
+        echo -e "\n4.1.3.20 Ensure the audit configuration is immutable --> \e[32mpassed\e[0m\n"
         echo -e "On-disk configuration:\n$audit_immutable_rule\n"
     else
-        echo -e "\n4.1.3.20 Ensure the audit configuration is immutable --> \e[31mFail\e[0m\n"
+        echo -e "\n4.1.3.20 Ensure the audit configuration is immutable --> \e[31mfailed\e[0m\n"
         echo -e "Reason: The audit configuration is not set to be immutable.\n"
     fi
 }

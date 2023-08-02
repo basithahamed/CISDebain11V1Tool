@@ -4,7 +4,7 @@
 check_privileged_commands() {
     # Check if auditd is installed
     if ! dpkg -l auditd &>/dev/null; then
-        echo -e "\n4.1.3.6 Ensure use of privileged commands is collected - \e[31mFail\e[0m"
+        echo -e "\n4.1.3.6 Ensure use of privileged commands is collected - \e[31mfailed\e[0m"
         echo "auditd is not installed"
         exit 1
     fi
@@ -23,10 +23,10 @@ check_privileged_commands() {
     done
 
     if [ $found -eq 1 ]; then
-        echo -e "\n4.1.3.6 Ensure use of privileged commands is collected - \e[32mPass\e[0m"
+        echo -e "\n4.1.3.6 Ensure use of privileged commands is collected - \e[32mpassed\e[0m"
         echo -e "$output"
     else
-        echo -e "\n4.1.3.6 Ensure use of privileged commands is collected - \e[31mFail\e[0m"
+        echo -e "\n4.1.3.6 Ensure use of privileged commands is collected - \e[31mfailed\e[0m"
         echo "No privileged commands found in auditing rules."
     fi
 }

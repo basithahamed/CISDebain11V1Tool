@@ -12,7 +12,7 @@ check_ntp_installed() {
 
 # Function to check if systemd-timesyncd is enabled
 check_systemd_timesyncd_enabled() {
-  systemctl is-enabled systemd-timesyncd.service | grep -q 'enabled'
+  systemctl is-enabled systemd-timesyncd.service 2>&1 | grep -q 'enabled'
 }
 
 # Main script execution

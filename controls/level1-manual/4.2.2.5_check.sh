@@ -46,9 +46,9 @@ check_logging_configuration() {
     done
 
     if $logging_configured; then
-        echo -e "\n4.2.2.5 Ensure logging is configured --> \e[32mPASS\e[0m"
+        echo -e "\n4.2.2.5 Ensure logging is configured --> \e[32mpassed\e[0m"
     else
-        echo -e "\n4.2.2.5 Ensure logging is configured --> \e[31mFAIL\e[0m"
+        echo -e "\n4.2.2.5 Ensure logging is configured --> \e[31mfailed\e[0m"
     fi
 }
 

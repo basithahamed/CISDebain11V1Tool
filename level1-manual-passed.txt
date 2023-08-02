@@ -1,0 +1,5 @@
+2.4 Ensure nonessential services are removed or masked --> [0;32mpassed[0m
+3.1.1 Ensure system is checked to determine if IPv6 is enabled --> [0;32mpassed[0m
+4.2.2.3 Ensure journald is configured to send logs to rsyslog --> [32mpassed[0m
+4.2.2.6 Ensure rsyslog is configured to send logs to a remote log host --> [32mpassed[0m
+5.4.5 Ensure all current passwords use the configured hashing algorithm --> [32mpassed[0m

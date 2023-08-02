@@ -24,9 +24,9 @@ check_audit_tools_permissions() {
     done
 
     if [ "$has_failures" -eq 0 ]; then
-        echo -e "4.1.4.8 Ensure audit tools are 755 or more restrictive --> \e[32mPASS\e[0m"
+        echo -e "4.1.4.8 Ensure audit tools are 755 or more restrictive --> \e[32mpassed\e[0m"
     else
-        echo -e "4.1.4.8 Ensure audit tools are 755 or more restrictive --> \e[31mFAIL\e[0m"
+        echo -e "4.1.4.8 Ensure audit tools are 755 or more restrictive --> \e[31mfailed\e[0m"
         echo -e "$l_unauthorized_files\n"
     fi
 }

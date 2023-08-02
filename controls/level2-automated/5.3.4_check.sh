@@ -8,7 +8,7 @@ check_sudo_password_required() {
         echo -e "\n5.3.4 Ensure users must provide password for privilege escalation --> \033[0;31mfailed\033[0m"
         cat "$sudoers_with_nopasswd"
     else
-        echo -e "\n5.3.4 Ensure users must provide password for privilege escalation --> \033[0;32mPass\033[0m"
+        echo -e "\n5.3.4 Ensure users must provide password for privilege escalation --> \033[0;32mpassed\033[0m"
     fi
 }
 

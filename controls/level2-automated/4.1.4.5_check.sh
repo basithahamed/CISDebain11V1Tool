@@ -11,9 +11,9 @@ check_audit_config_permissions() {
     done < <(find /etc/audit/ -type f \( -name '*.conf' -o -name '*.rules' \) -print0)
 
     if [ -z "$l_unauthorized_files" ]; then
-        echo -e "4.1.4.5 Ensure audit configuration files are 640 or more restrictive --> \e[32mPASS\e[0m"
+        echo -e "4.1.4.5 Ensure audit configuration files are 640 or more restrictive --> \e[32mpassed\e[0m"
     else
-        echo -e "4.1.4.5 Ensure audit configuration files are 640 or more restrictive --> \e[31mFAIL\e[0m"
+        echo -e "4.1.4.5 Ensure audit configuration files are 640 or more restrictive --> \e[31mfailed\e[0m"
         echo -e "\nUnauthorized audit configuration files:\n$l_unauthorized_files\n"
     fi
 }

@@ -18,10 +18,10 @@ check_unsuccessful_file_access_attempts() {
     done
 
     if [ $found -eq 1 ]; then
-        echo -e "\n4.1.3.7 Ensure unsuccessful file access attempts are collected - \e[32mPass\e[0m"
+        echo -e "\n4.1.3.7 Ensure unsuccessful file access attempts are collected - \e[32mpassed\e[0m"
         echo -e "Verify the output includes:\n$output"
     else
-        echo -e "\n4.1.3.7 Ensure unsuccessful file access attempts are collected - \e[31mFail\e[0m"
+        echo -e "\n4.1.3.7 Ensure unsuccessful file access attempts are collected - \e[31mfailed\e[0m"
         echo "No matching rules found in audit rules."
     fi
 }

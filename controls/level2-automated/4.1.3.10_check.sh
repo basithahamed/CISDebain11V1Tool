@@ -13,13 +13,13 @@ check_on_disk_mount_rules() {
 &&/ -S/ \
 &&/mount/ \
 &&(/ key= *[!-~]* *$/||/ -k *[!-~]* *$/)" /etc/audit/rules.d/*.rules | grep -q mounts; then
-            output+="\n4.1.3.10 Ensure successful file system mounts are collected --> \e[32mPass\e[0m\n"
+            output+="\n4.1.3.10 Ensure successful file system mounts are collected --> \e[32mpassed\e[0m\n"
         else
-            output+="\n4.1.3.10 Ensure successful file system mounts are collected --> \e[31mFail\e[0m\n"
+            output+="\n4.1.3.10 Ensure successful file system mounts are collected --> \e[31mfailed\e[0m\n"
             output+="Reason: The audit rule for successful file system mounts is not found or is incorrect.\n"
         fi
     else
-        output+="\n4.1.3.10 Ensure successful file system mounts are collected --> \e[31mFail\e[0m\n"
+        output+="\n4.1.3.10 Ensure successful file system mounts are collected --> \e[31mfailed\e[0m\n"
         output+="Reason: Variable 'UID_MIN' is unset.\n"
     fi
 

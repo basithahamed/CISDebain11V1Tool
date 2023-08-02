@@ -18,13 +18,13 @@ check_audit_log_permissions() {
         done < <(find "$l_audit_log_dir" -type f \( ! -perm 600 -a ! -perm 0400 -a ! -perm 0200 -a ! -perm 0000 -a ! -perm 0640 -a ! -perm 0440 -a ! -perm 0040 \) -print0)
 
         if [ "$l_wrong_permissions" = true ]; then
-            echo -e "4.1.4.1 Ensure audit log files are mode 0640 or less permissive --> \e[31mFAIL\e[0m"
+            echo -e "4.1.4.1 Ensure audit log files are mode 0640 or less permissive --> \e[31mfailed\e[0m"
             echo -e "\nAudit log files with incorrect permissions:\n$l_files_wrong_permissions\n"
         else
-            echo -e "4.1.4.1 Ensure audit log files are mode 0640 or less permissive --> \e[32mPASS\e[0m"
+            echo -e "4.1.4.1 Ensure audit log files are mode 0640 or less permissive --> \e[32mpassed\e[0m"
         fi
     else
-        echo -e "4.1.4.1 Ensure audit log files are mode 0640 or less permissive --> \e[31mFAIL\e[0m"
+        echo -e "4.1.4.1 Ensure audit log files are mode 0640 or less permissive --> \e[31mfailed\e[0m"
         echo -e "\n/etc/audit/auditd.conf file not found!\n"
     fi
 }

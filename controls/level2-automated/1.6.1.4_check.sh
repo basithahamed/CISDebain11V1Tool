@@ -16,14 +16,14 @@ check_apparmor_profiles_enforcing() {
     if echo "$apparmor_status_output" | grep -q "profiles are loaded" && \
        echo "$apparmor_status_output" | grep -q "profiles are in enforce mode" && \
        echo "$apparmor_status_output" | grep -q "0 profiles are in complain mode"; then
-        echo -e "1.6.1.4 Ensure all AppArmor Profiles are enforcing --> \033[0;32mpass\033[0m"
+        echo -e "1.6.1.4 Ensure all AppArmor Profiles are enforcing --> \033[0;32mpassed\033[0m"
     else
         echo -e "1.6.1.4 Ensure all AppArmor Profiles are enforcing --> \033[0;31mfailed\033[0m"
     fi
 
     # Check if no processes are unconfined
     if echo "$apparmor_status_output" | grep -q "0 processes are unconfined but have a profile defined"; then
-        echo -e "1.6.1.4 Ensure all processes are confined by AppArmor --> \033[0;32mpass\033[0m"
+        echo -e "1.6.1.4 Ensure all processes are confined by AppArmor --> \033[0;32mpassed\033[0m"
     else
         echo -e "1.6.1.4 Ensure all processes are confined by AppArmor --> \033[0;31mfailed\033[0m"
     fi

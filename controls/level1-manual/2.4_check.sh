@@ -13,7 +13,7 @@ check_nonessential_services() {
     fi
   done
 
-  echo -e "\n2.4 Ensure nonessential services are removed or masked --> \033[0;32mPASS\033[0m"
+  echo -e "\n2.4 Ensure nonessential services are removed or masked --> \033[0;32mpassed\033[0m"
   echo "All nonessential services are removed or masked."
   return 0
 }

@@ -15,13 +15,13 @@ check_audit_log_directory_permissions() {
         done < <(find "$l_audit_log_dir" -type d -print0)
 
         if [ -z "$l_unauthorized_dirs" ]; then
-            echo -e "4.1.4.4 Ensure the audit log directory is 0750 or more restrictive --> \e[32mPASS\e[0m"
+            echo -e "4.1.4.4 Ensure the audit log directory is 0750 or more restrictive --> \e[32mpassed\e[0m"
         else
-            echo -e "4.1.4.4 Ensure the audit log directory is 0750 or more restrictive --> \e[31mFAIL\e[0m"
+            echo -e "4.1.4.4 Ensure the audit log directory is 0750 or more restrictive --> \e[31mfailed\e[0m"
             echo -e "\nUnauthorized audit log directories:\n$l_unauthorized_dirs\n"
         fi
     else
-        echo -e "4.1.4.4 Ensure the audit log directory is 0750 or more restrictive --> \e[31mFAIL\e[0m"
+        echo -e "4.1.4.4 Ensure the audit log directory is 0750 or more restrictive --> \e[31mfailed\e[0m"
         echo -e "\nAudit log directory not found!\n"
     fi
 }

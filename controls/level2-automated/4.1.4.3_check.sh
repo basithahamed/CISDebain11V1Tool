@@ -20,13 +20,13 @@ check_audit_log_group_ownership() {
         done < <(find "$l_audit_log_dir" -type f ! -group adm ! -group root -print0)
 
         if [ "$l_authorized" = true ]; then
-            echo -e "4.1.4.3 Ensure only authorized groups are assigned ownership of audit log files --> \e[32mPASS\e[0m"
+            echo -e "4.1.4.3 Ensure only authorized groups are assigned ownership of audit log files --> \e[32mpassed\e[0m"
         else
-            echo -e "4.1.4.3 Ensure only authorized groups are assigned ownership of audit log files --> \e[31mFAIL\e[0m"
+            echo -e "4.1.4.3 Ensure only authorized groups are assigned ownership of audit log files --> \e[31mfailed\e[0m"
             echo -e "\nUnauthorized audit log files:\n$l_unauthorized_files\n"
         fi
     else
-        echo -e "4.1.4.3 Ensure only authorized groups are assigned ownership of audit log files --> \e[31mFAIL\e[0m"
+        echo -e "4.1.4.3 Ensure only authorized groups are assigned ownership of audit log files --> \e[31mfailed\e[0m"
         echo -e "\n/etc/audit/auditd.conf file not found!\n"
     fi
 }

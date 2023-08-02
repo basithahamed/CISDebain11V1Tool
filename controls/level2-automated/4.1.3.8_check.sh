@@ -12,10 +12,10 @@ check_modify_user_group_info_events() {
     done
 
     if [ $found -eq 1 ]; then
-        echo -e "\n4.1.3.8 Ensure events that modify user/group information are collected - \e[32mPass\e[0m"
+        echo -e "\n4.1.3.8 Ensure events that modify user/group information are collected - \e[32mpassed\e[0m"
         echo -e "Verify the output matches:\n$output"
     else
-        echo -e "\n4.1.3.8 Ensure events that modify user/group information are collected - \e[31mFail\e[0m"
+        echo -e "\n4.1.3.8 Ensure events that modify user/group information are collected - \e[31mfailed\e[0m"
         echo "No matching rules found in audit rules."
     fi
 }

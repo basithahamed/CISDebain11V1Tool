@@ -1,0 +1,89 @@
+1.1.10 Ensure USB storage is disabled --> [0;32mpassed[0m
+1.1.1.1 Ensure mounting of cramfs filesystems is disabled --> [0;32mpassed[0m
+1.1.2.1 Ensure /tmp is a separate partition --> [0;32mpassed[0m
+1.1.2.2 Ensure nodev option set on /tmp partition --> [0;32mpassed[0m
+1.1.2.3 Ensure noexec option set on /tmp partition --> [0;32mpassed[0m
+1.1.2.4 Ensure nosuid option set on /tmp partition --> [0;32mpassed[0m
+1.2.1 Ensure package manager repositories are configured --> [0;32mpassed[0m (APT)
+1.5.2 Ensure prelink is not installed --> [0;32mpassed[0m
+1.5.3 Ensure Automatic Error Reporting is not enabled --> [0;32mpassed[0m
+1.7.4 Ensure permissions on /etc/motd are configured --> [0;32mpassed[0m
+1.7.5 Ensure permissions on /etc/issue are configured --> [0;32mpassed[0m
+1.7.6 Ensure permissions on /etc/issue.net are configured --> [0;32mpassed[0m
+1.8.10 Ensure GDM custom.conf configuration 'Enable' is not set to true --> [0;32mpassed[0m - The 'Enable' configuration is not set to true in /etc/gdm3/custom.conf
+1.8.2 Ensure GDM login banner is configured --> [0;32mpassed[0m
+1.8.3 Ensure GDM disable-user-list option is enabled --> [0;32mpassed[0m
+1.8.4 Ensure GDM screen locks when the user is idle --> [0;32mpassed[0m- GNOME Desktop Manager isn't installed
+1.8.5 Ensure GDM screen locks cannot be overridden --> [0;32mpassed[0m- GNOME Desktop Manager isn't installed
+1.8.6 Ensure GDM automatic mounting of removable media is disabled --> [0;32mpassed[0m- GNOME Desktop Manager isn't installed
+1.8.7 Ensure GDM disabling automatic mounting of removable media is not overridden --> [0;32mpassed[0m- GNOME Desktop Manager isn't installed
+1.8.8 Ensure GDM autorun-never is enabled --> [0;32mpassed[0m- GNOME Desktop Manager isn't installed
+1.8.9 Ensure GDM autorun-never is not overridden --> [0;32mpassed[0m- GNOME Desktop Manager isn't installed
+2.1.1.1 Ensure a single time synchronization daemon is in use --> [0;32mpassed[0m
+2.1.2.2 Ensure chrony is running as user _chrony --> [0;32mpassed[0m
+2.1.2.3 Ensure chrony is enabled and running --> [0;32mpassed[0m
+2.2.10 Ensure IMAP and POP3 Server are not installed --> [0;32mpassed[0m
+2.2.11 Ensure Samba is not installed --> [0;32mpassed[0m
+2.2.12 Ensure HTTP Proxy Server is not installed --> [0;32mpassed[0m
+2.2.13 Ensure SNMP Server is not installed --> [0;32mpassed[0m
+2.2.14 Ensure NIS Server is not installed --> [0;32mpassed[0m
+2.2.15 Ensure mail transfer agent is configured for local-only mode --> [0;32mpassed[0m
+2.2.1 Ensure X Window System is not installed --> [0;32mpassed[0m
+2.2.2 Ensure Avahi Server is not installed --> [0;32mpassed[0m
+2.2.3 Ensure CUPS is not installed --> [0;32mpassed[0m
+2.2.4 Ensure DHCP Server is not installed --> [0;32mpassed[0m
+2.2.5 Ensure LDAP Server is not installed --> [0;32mpassed[0m
+2.2.6 Ensure NFS is not installed --> [0;32mpassed[0m
+2.2.7 Ensure DNS Server is not installed --> [0;32mpassed[0m
+2.2.8 Ensure FTP Server is not installed --> [0;32mpassed[0m
+2.2.9 Ensure HTTP Server is not installed --> [0;32mpassed[0m
+2.3.1 Ensure NIS Client is not installed --> [0;32mpassed[0m
+2.3.2 Ensure rsh client is not installed --> [0;32mpassed[0m
+2.3.3 Ensure talk client is not installed --> [0;32mpassed[0m
+2.3.4 Ensure telnet client is not installed --> [0;32mpassed[0m
+2.3.5 Ensure LDAP client is not installed --> [0;32mpassed[0m
+3.1.2 Ensure wireless interfaces are disabled --> [0;32mpassed[0m
+3.2.1 Ensure packet redirect sending is disabled --> [0;32mpassed[0m
+3.3.2 Ensure ICMP redirects are not accepted --> [0;32mpassed[0m
+4.2.2.2 Ensure rsyslog service is enabled --> [0;32mpassed[0m
+5.1.1 Ensure cron daemon is enabled and running --> [0;32mpassed[0m
+5.2.10 Ensure SSH PermitUserEnvironment is disabled --> [0;32mpassed[0m
+5.2.11 Ensure SSH IgnoreRhosts is enabled --> [0;32mpassed[0m
+5.2.12 Ensure SSH X11 forwarding is disabled --> [0;32mpassed[0m
+5.2.13 Ensure only strong Ciphers are used --> [0;32mpassed[0m
+5.2.20 Ensure SSH MaxSessions is set to 10 or less --> [0;32mpassed[0m
+5.2.2 Ensure permissions on SSH private host key files are configured --> [0;32mpassed[0m
+5.2.3 Ensure permissions on SSH public host key files are configured --> [0;32mpassed[0m
+5.2.5 Ensure SSH LogLevel is appropriate --> [0;32mpassed[0m
+5.2.6 Ensure SSH PAM is enabled --> [0;32mpassed[0m
+5.2.7 Ensure SSH root login is disabled --> [0;32mpassed[0m
+5.2.8 Ensure SSH HostbasedAuthentication is disabled --> [0;32mpassed[0m
+5.2.9 Ensure SSH PermitEmptyPasswords is disabled --> [0;32mpassed[0m
+5.3.1 Ensure sudo is installed --> [0;32mpassed[0m
+5.3.5 Ensure re-authentication for privilege escalation is not disabled globally --> [0;32mpassed[0m
+5.5.1.5 Ensure all users last password change date is in the past --> [0;32mpassed[0m
+5.5.3 Ensure default group for the root account is GID 0 --> [32mpassed[0m
+6.1.10 Ensure no unowned files or directories exist --> [0;32mpassed[0m
+6.1.11 Ensure no ungrouped files or directories exist --> [0;32mpassed[0m
+6.1.12 Audit SUID executables --> [0;32mpassed[0m
+6.1.13 Audit SGID executables --> [0;32mpassed[0m
+6.1.1 Ensure permissions on /etc/passwd are configured --> [0;32mpassed[0m
+6.1.2 Ensure permissions on /etc/passwd- are configured --> [0;32mpassed[0m
+6.1.3 Ensure permissions on /etc/group are configured --> [0;32mpassed[0m
+6.1.4 Ensure permissions on /etc/group- are configured --> [0;32mpassed[0m
+6.1.9 Ensure no world writable files exist --> [0;32mpassed[0m
+6.2.10 Ensure root is the only UID 0 account --> [0;32mpassed[0m: Only 'root' account has UID 0
+6.2.11 Ensure local interactive user home directories exist --> [0;32mpassed[0m: All local interactive users have a home directory
+6.2.12 Ensure local interactive users own their home directories --> [0;32mpassed[0m: All local interactive users own their home directories
+6.2.14 Ensure no local interactive user has .netrc files --> [0;32mpassed[0m: - No local interactive users have ".netrc" files in their home directory
+6.2.15 Ensure no local interactive user has .forward files --> [0;32mpassed[0m: - No local interactive users have ".forward" files in their home directory
+6.2.16 Ensure no local interactive user has .rhosts files --> [0;32mpassed[0m: - No local interactive users have ".rhosts" files in their home directory
+6.2.1 Ensure accounts in /etc/passwd use shadowed passwords --> [31mpassed[0m
+6.2.2 Ensure /etc/shadow password fields are not empty --> [31m    [0;32mpassed[0m[0m
+6.2.3 Ensure all groups in /etc/passwd exist in /etc/group -->  [0;32mpassed[0m
+6.2.4 Ensure shadow group is empty --> [0;32mpassed[0m
+6.2.5 Ensure no duplicate UIDs exist --> [0;32mpassed[0m
+6.2.6 Ensure no duplicate GIDs exist --> [0;32mpassed[0m
+6.2.7 Ensure no duplicate user names exist --> [0;32mpassed[0m
+6.2.8 Ensure no duplicate group names exist --> [0;32mpassed[0m
+6.2.9 Ensure root PATH Integrity --> [0;32mpassed[0m
