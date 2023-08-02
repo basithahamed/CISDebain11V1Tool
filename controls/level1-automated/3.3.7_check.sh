@@ -34,9 +34,9 @@ check_reverse_path_filtering() {
     done
 
     if [ -z "$l_output2" ]; then
-        echo -e "3.3.7 Ensure Reverse Path Filtering is enabled --> \e[32mPass\e[0m"
+        echo -e "3.3.7 Ensure Reverse Path Filtering is enabled --> \033[0;32mpassed\033[0m"
     else
-        echo -e "3.3.7 Ensure Reverse Path Filtering is enabled --> \e[31mFail\e[0m"
+        echo -e "3.3.7 Ensure Reverse Path Filtering is enabled --> \e[31mfailed\e[0m"
         echo -e "\nReason(s) for audit failure:\n$l_output2\n"
         [ -n "$l_output" ] && echo -e "Correctly set:\n$l_output\n"
     fi

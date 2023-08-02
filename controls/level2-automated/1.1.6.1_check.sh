@@ -9,10 +9,10 @@ check_separate_partition_var_log_audit() {
         if [ "$var_log_audit_mount" != "$root_mount" ]; then
             echo -e "1.1.6.1 Ensure separate partition exists for /var/log/audit --> \033[0;32mpass\033[0m"
         else
-            echo -e "1.1.6.1 Ensure separate partition exists for /var/log/audit --> \033[0;31mfail\033[0m"
+            echo -e "1.1.6.1 Ensure separate partition exists for /var/log/audit --> \033[0;31mfailed\033[0m"
         fi
     else
-        echo -e "1.1.6.1 Ensure separate partition exists for /var/log/audit --> \033[0;31mfail\033[0m (Directory not found)"
+        echo -e "1.1.6.1 Ensure separate partition exists for /var/log/audit --> \033[0;31mfailed\033[0m (Directory not found)"
     fi
 }
 

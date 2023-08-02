@@ -6,9 +6,9 @@ audit_suid_executables() {
     local suid_files=$(find "$partition" -xdev -type f -perm -4000)
 
     if [ -z "$suid_files" ]; then
-        echo -e "\e[32mPASS\e[0m"
+        echo -e "\033[0;32mpassed\033[0m"
     else
-        echo -e "\e[31mFAIL\e[0m"
+        echo -e "\e[31mfailed\e[0m"
         echo "SUID executables found:"
         echo "$suid_files"
     fi
@@ -18,7 +18,7 @@ audit_suid_executables() {
 partitions=$(df --local -P | awk '{if (NR!=1) print $6}')
 
 # Initialize a variable to track the overall result
-overall_result="\e[32mPASS\e[0m"
+overall_result="\033[0;32mpassed\033[0m"
 
 # Check each partition for SUID executables
 for partition in $partitions; do

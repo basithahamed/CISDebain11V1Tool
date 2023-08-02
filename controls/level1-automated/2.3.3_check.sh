@@ -16,7 +16,7 @@ if check_talk_client_installed; then
   echo "Talk client is installed."
   exit 1
 else
-  echo -e "\n2.3.3 Ensure talk client is not installed --> ${GREEN}PASS${NC}"
+  echo -e "\n2.3.3 Ensure talk client is not installed --> ${GREEN}passed${NC}"
   echo "Talk client is not installed."
   exit 0
 fi

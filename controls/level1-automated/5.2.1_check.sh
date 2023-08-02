@@ -7,9 +7,9 @@ check_sshd_config_permissions() {
     local sshd_config_gid=$(stat -c "%G" /etc/ssh/sshd_config)
 
     if [[ "$sshd_config_permissions" == "-rw-------" && "$sshd_config_uid" == "root" && "$sshd_config_gid" == "root" ]]; then
-        echo -e "5.2.1 Ensure permissions on /etc/ssh/sshd_config are configured --> \e[32mPASS\e[0m\n"
+        echo -e "5.2.1 Ensure permissions on /etc/ssh/sshd_config are configured --> \033[0;32mpassed\033[0m"
     else
-        echo -e "5.2.1 Ensure permissions on /etc/ssh/sshd_config are configured --> \e[31mFAIL\e[0m\n"
+        echo -e "5.2.1 Ensure permissions on /etc/ssh/sshd_config are configured --> \e[31mfailed\e[0m\n"
     fi
 }
 

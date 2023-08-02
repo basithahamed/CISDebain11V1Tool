@@ -7,12 +7,12 @@ check_strong_ciphers_used() {
 
     for cipher in "${weak_ciphers[@]}"; do
         if echo "$sshd_output" | grep -qi "$cipher"; then
-            echo -e "\n5.2.13 Ensure only strong Ciphers are used --> \e[31mFAIL\e[0m\n"
+            echo -e "\n5.2.13 Ensure only strong Ciphers are used --> \e[31mfailed\e[0m\n"
             return
         fi
     done
 
-    echo -e "\n5.2.13 Ensure only strong Ciphers are used --> \e[32mPASS\e[0m\n"
+    echo -e "\n5.2.13 Ensure only strong Ciphers are used --> \033[0;32mpassed\033[0m"
 }
 
 # Call the function to check if only strong ciphers are used in SSH

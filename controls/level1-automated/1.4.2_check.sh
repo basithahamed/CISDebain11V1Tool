@@ -8,12 +8,12 @@ check_bootloader_permissions() {
     if [ -e "$bootloader_cfg" ]; then
         # Check the permissions of the bootloader config file
         if [[ "$(stat -L -c "%a" "$bootloader_cfg")" == "600" ]]; then
-            echo -e "1.4.2 Ensure permissions on bootloader config are configured --> \033[0;32mpass\033[0m"
+            echo -e "1.4.2 Ensure permissions on bootloader config are configured --> \033[0;32mpassed\033[0m"
         else
-            echo -e "1.4.2 Ensure permissions on bootloader config are configured --> \033[0;31mfail\033[0m (Incorrect permissions)"
+            echo -e "1.4.2 Ensure permissions on bootloader config are configured --> \033[0;31mfailed\033[0m (Incorrect permissions)"
         fi
     else
-        echo -e "1.4.2 Ensure permissions on bootloader config are configured --> \033[0;31mfail\033[0m (Bootloader config not found)"
+        echo -e "1.4.2 Ensure permissions on bootloader config are configured --> \033[0;31mfailed\033[0m (Bootloader config not found)"
     fi
 }
 

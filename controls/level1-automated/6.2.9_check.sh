@@ -24,9 +24,9 @@ check_root_path_integrity() {
     done
 
     if [ -z "$output" ]; then
-        echo -e "6.2.9 Ensure root PATH Integrity --> \e[32mPASS\e[0m"
+        echo -e "6.2.9 Ensure root PATH Integrity --> \033[0;32mpassed\033[0m"
     else
-        echo -e "6.2.9 Ensure root PATH Integrity --> \e[31mFAIL\e[0m\n$output"
+        echo -e "6.2.9 Ensure root PATH Integrity --> \e[31mfailed\e[0m\n$output"
     fi
 }
 

@@ -15,6 +15,6 @@ if check_ldap_client_installed; then
   echo -e "\n2.3.5 Ensure LDAP client is not installed --> ${RED}FAIL${NC}"
   echo "LDAP client is installed."
 else
-  echo -e "\n2.3.5 Ensure LDAP client is not installed --> ${GREEN}PASS${NC}"
+  echo -e "\n2.3.5 Ensure LDAP client is not installed --> ${GREEN}passed${NC}"
   echo "LDAP client is not installed."
 fi

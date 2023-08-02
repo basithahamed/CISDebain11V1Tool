@@ -18,7 +18,7 @@ check_groups_existence() {
 # Call the function to check group existence
 check_groups_existence
 if [ $? -eq 0 ]; then
-    echo -e "6.2.3 Ensure all groups in /etc/passwd exist in /etc/group --> \e[32mPASS\e[0m"
+    echo -e "6.2.3 Ensure all groups in /etc/passwd exist in /etc/group --> \033[0;32mpassed\033[0m"
 else
-    echo -e "6.2.3 Ensure all groups in /etc/passwd exist in /etc/group --> \e[31mFAIL\e[0m"
+    echo -e "6.2.3 Ensure all groups in /etc/passwd exist in /etc/group --> \e[31mfailed\e[0m"
 fi

@@ -6,10 +6,10 @@ check_apparmor() {
         if [ -f "/etc/apparmor/parser.conf" ] && [ -f "/etc/apparmor/subdomain.conf" ]; then
             check_profiles_mode
         else
-            echo -e "1.6.1.3 Ensure all AppArmor Profiles are in enforce or complain mode --> \033[0;32mpass\033[0m (AppArmor is installed but no profiles found)"
+            echo -e "1.6.1.3 Ensure all AppArmor Profiles are in enforce or complain mode --> \033[0;32mpassed\033[0m (AppArmor is installed but no profiles found)"
         fi
     else
-        echo -e "1.6.1.3 Ensure all AppArmor Profiles are in enforce or complain mode --> \033[0;31mfail\033[0m (AppArmor is not installed)"
+        echo -e "1.6.1.3 Ensure all AppArmor Profiles are in enforce or complain mode --> \033[0;31mfailed\033[0m (AppArmor is not installed)"
     fi
 }
 
@@ -26,9 +26,9 @@ check_profiles_mode() {
     done
 
     if "$all_profiles_enforce_or_complain"; then
-        echo -e "1.6.1.3 Ensure all AppArmor Profiles are in enforce or complain mode --> \033[0;32mpass\033[0m"
+        echo -e "1.6.1.3 Ensure all AppArmor Profiles are in enforce or complain mode --> \033[0;32mpassed\033[0m"
     else
-        echo -e "1.6.1.3 Ensure all AppArmor Profiles are in enforce or complain mode --> \033[0;31mfail\033[0m"
+        echo -e "1.6.1.3 Ensure all AppArmor Profiles are in enforce or complain mode --> \033[0;31mfailed\033[0m"
     fi
 }
 

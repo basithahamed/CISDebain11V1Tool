@@ -12,12 +12,15 @@ check_sudo_timeout() {
         fi
     fi
 
-    if [ "$timeout" -eq -1 ]; then
-        echo -e "\n5.3.6 Ensure sudo authentication timeout is configured correctly --> \033[0;31mFail\033[0m (Timeout is disabled)"
+    # Convert the timeout to an integer using the 'tr' command
+    timeout=$(echo "$timeout" | tr -d '\n')
+
+    if [ "$timeout" -eq "-1" ]; then
+        echo -e "\n5.3.6 Ensure sudo authentication timeout is configured correctly --> \033[0;31mfailed\033[0m (Timeout is disabled)"
     elif [ "$timeout" -le 0 ] || [ "$timeout" -gt 15 ]; then
-        echo -e "\n5.3.6 Ensure sudo authentication timeout is configured correctly --> \033[0;31mFail\033[0m (Timeout is set to $timeout minutes)"
+        echo -e "\n5.3.6 Ensure sudo authentication timeout is configured correctly --> \033[0;31mfailed\033[0m (Timeout is set to $timeout minutes)"
     else
-        echo -e "\n5.3.6 Ensure sudo authentication timeout is configured correctly --> \033[0;32mPass\033[0m (Timeout is set to $timeout minutes)"
+        echo -e "\n5.3.6 Ensure sudo authentication timeout is configured correctly --> \033[0;32mpassed\033[0m (Timeout is set to $timeout minutes)"
     fi
 }
 

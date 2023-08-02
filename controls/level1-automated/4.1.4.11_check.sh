@@ -19,9 +19,9 @@ check_aide_audit_tools_config() {
     local all_aide_tools_configured=$(echo -e "$l_output" | grep -Pv -- "$expected_config")
 
     if [ -z "$all_aide_tools_configured" ]; then
-        echo -e "4.1.4.11 Ensure cryptographic mechanisms are used to protect the integrity of audit tools --> \e[32mPASS\e[0m"
+        echo -e "4.1.4.11 Ensure cryptographic mechanisms are used to protect the integrity of audit tools --> \033[0;32mpassed\033[0m"
     else
-        echo -e "4.1.4.11 Ensure cryptographic mechanisms are used to protect the integrity of audit tools --> \e[31mFAIL\e[0m"
+        echo -e "4.1.4.11 Ensure cryptographic mechanisms are used to protect the integrity of audit tools --> \e[31mfailed\e[0m"
         echo -e "Expected configuration: $expected_config\n"
         echo -e "$all_aide_tools_configured"
     fi

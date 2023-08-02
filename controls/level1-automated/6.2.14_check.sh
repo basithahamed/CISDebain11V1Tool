@@ -21,12 +21,12 @@ check_local_users_netrc_files() {
 
         if [ -z "$output" ]; then
             if [ -z "$output2" ]; then
-                echo -e "\n6.2.14 Ensure no local interactive user has .netrc files --> \e[32mPASS\e[0m: - No local interactive users have \".netrc\" files in their home directory\n"
+                echo -e "\n6.2.14 Ensure no local interactive user has .netrc files --> \033[0;32mpassed\033[0m: - No local interactive users have \".netrc\" files in their home directory\n"
             else
                 echo -e "\n6.2.14 Ensure no local interactive user has .netrc files --> \e[33mWARNING\e[0m:\n$output2\n"
             fi
         else
-            echo -e "\n6.2.14 Ensure no local interactive user has .netrc files --> \e[31mFAIL\e[0m:\n$output\n"
+            echo -e "\n6.2.14 Ensure no local interactive user has .netrc files --> \e[31mfailed\e[0m:\n$output\n"
             [ -n "$output2" ] && echo -e "\n\e[33mWARNING\e[0m:\n$output2\n"
         fi
     )

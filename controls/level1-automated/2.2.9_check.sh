@@ -13,11 +13,11 @@ check_apache_installed() {
 # Main script execution
 {
   if check_apache_installed; then
-    echo -e "\n2.2.9 Ensure HTTP Server is not installed --> \e[31mFAIL\e[0m"
+    echo -e "\n2.2.9 Ensure HTTP Server is not installed --> \e[31mfailed\e[0m"
     echo -e "The Apache HTTP server package (apache2) is installed:\n"
     dpkg-query -W -f='${binary:Package}\t${Status}\t${db:Status-Status}\n' apache2 2>/dev/null
   else
-    echo -e "\n2.2.9 Ensure HTTP Server is not installed --> \e[32mPASS\e[0m"
+    echo -e "\n2.2.9 Ensure HTTP Server is not installed --> \033[0;32mpassed\033[0m"
     echo -e "The Apache HTTP server package (apache2) is not installed.\n"
   fi
 }

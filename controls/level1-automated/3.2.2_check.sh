@@ -60,11 +60,11 @@ check_kernel_parameter() {
   done
 
   if [ -z "$l_output2" ]; then
-    echo -e "\n3.2.2 Ensure IP forwarding is disabled --> \033[0;32mPASS\033[0m"
+    echo -e "\n3.2.2 Ensure IP forwarding is disabled --> \033[0;32mpassed\033[0m"
     echo -e "Audit Result:\n$l_output\n"
     exit 0
   else
-    echo -e "\n3.2.2 Ensure IP forwarding is disabled --> \033[0;31mFAIL\033[0m"
+    echo -e "\n3.2.2 Ensure IP forwarding is disabled --> \033[0;31mfailed\033[0m"
     echo -e "Audit Result:\nReason(s) for audit failure:\n$l_output2\n"
     [ -n "$l_output" ] && echo -e "Correctly set:\n$l_output\n"
     exit 1

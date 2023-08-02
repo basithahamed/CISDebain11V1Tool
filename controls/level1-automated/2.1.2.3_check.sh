@@ -10,10 +10,10 @@ check_chrony_enabled() {
   local is_enabled=$(systemctl is-enabled chrony 2>&1)
 
   if [ "$is_enabled" == "enabled" ]; then
-    echo -e "\n2.1.2.3 Ensure chrony is enabled and running --> \e[32mPASS\e[0m"
+    echo -e "\n2.1.2.3 Ensure chrony is enabled and running --> \033[0;32mpassed\033[0m"
     echo -e "Chrony service is enabled.\n"
   else
-    echo -e "\n2.1.2.3 Ensure chrony is enabled and running --> \e[31mFAIL\e[0m"
+    echo -e "\n2.1.2.3 Ensure chrony is enabled and running --> \e[31mfailed\e[0m"
     echo -e "Chrony service is not enabled.\n"
   fi
 }
@@ -23,10 +23,10 @@ check_chrony_running() {
   local is_running=$(systemctl is-active chrony 2>&1)
 
   if [ "$is_running" == "active" ]; then
-    echo -e "\n2.1.2.3 Ensure chrony is enabled and running --> \e[32mPASS\e[0m"
+    echo -e "\n2.1.2.3 Ensure chrony is enabled and running --> \033[0;32mpassed\033[0m"
     echo -e "Chrony service is running.\n"
   else
-    echo -e "\n2.1.2.3 Ensure chrony is enabled and running --> \e[31mFAIL\e[0m"
+    echo -e "\n2.1.2.3 Ensure chrony is enabled and running --> \e[31mfailed\e[0m"
     echo -e "Chrony service is not running.\n"
   fi
 }

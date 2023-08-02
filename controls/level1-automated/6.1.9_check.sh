@@ -16,13 +16,13 @@ check_partition_for_world_writable_files() {
 partitions=$(df --local -P | awk '{if (NR!=1) print $6}')
 
 # Initialize a variable to track the overall result
-overall_result="\e[32mPASS\e[0m"
+overall_result="\033[0;32mpassed\033[0m"
 
 # Check each partition for world-writable files
 for partition in $partitions; do
     result=$(check_partition_for_world_writable_files "$partition")
     if [ "$result" == "FAIL" ]; then
-        overall_result="\e[31mFAIL\e[0m"
+        overall_result="\e[31mfailed\e[0m"
     fi
 done
 

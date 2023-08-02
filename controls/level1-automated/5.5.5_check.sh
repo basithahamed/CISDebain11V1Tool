@@ -17,11 +17,11 @@ check_tmout_configuration() {
     output2=$(grep -Ps '^\s*([^#]+\s+)?TMOUT=(9[0-9][1-9]|9[1-9][0-9]|0+|[1-9]\d{3,})\b' /etc/profile /etc/profile.d/*.sh "$BRC")
 
     if [ -n "$output1" ] && [ -z "$output2" ]; then
-        echo -e "5.5.5 Ensure default user shell timeout is 900 seconds or less --> \033[0;32mPASS\033[0m"
+        echo -e "5.5.5 Ensure default user shell timeout is 900 seconds or less --> \033[0;32mpassed\033[0m"
         echo -e "\nTMOUT is configured in: \"$output1\"\n"
     else
-        [ -z "$output1" ] && echo -e "5.5.5 Ensure default user shell timeout is 900 seconds or less --> \033[0;31mFAIL\033[0m\n\nTMOUT is not configured\n"
-        [ -n "$output2" ] && echo -e "5.5.5 Ensure default user shell timeout is 900 seconds or less --> \033[0;31mFAIL\033[0m\n\nTMOUT is incorrectly configured in: \"$output2\"\n"
+        [ -z "$output1" ] && echo -e "5.5.5 Ensure default user shell timeout is 900 seconds or less --> \033[0;31mfailed\033[0m\n\nTMOUT is not configured\n"
+        [ -n "$output2" ] && echo -e "5.5.5 Ensure default user shell timeout is 900 seconds or less --> \033[0;31mfailed\033[0m\n\nTMOUT is incorrectly configured in: \"$output2\"\n"
     fi
 }
 

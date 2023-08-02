@@ -6,9 +6,9 @@ check_user_min_days() {
     local min_days=$(grep "^$user:[^!*]" /etc/shadow | awk -F: '{print $4}')
 
     if [ "$min_days" -ge 1 ]; then
-        echo -e "\033[0;32mPASS\033[0m"
+        echo -e "\033[0;32mpassed\033[0m"
     else
-        echo -e "\033[0;31mFAIL\033[0m"
+        echo -e "\033[0;31mfailed\033[0m"
     fi
 }
 
@@ -23,23 +23,23 @@ check_all_users_min_days() {
     done < /etc/shadow
 
     if [ "$all_pass" == "true" ]; then
-        echo -e "\033[0;32mPASS\033[0m"
+        echo -e "\033[0;32mpassed\033[0m"
     else
-        echo -e "\033[0;31mFAIL\033[0m"
+        echo -e "\033[0;31mfailed\033[0m"
     fi
 }
 
 # Check PASS_MIN_DAYS value in /etc/login.defs
 pass_min_days_value=$(grep '^\s*PASS_MIN_DAYS\s' /etc/login.defs | awk '{print $2}')
 if [ "$pass_min_days_value" -ge 1 ]; then
-    result="\033[0;32mPASS\033[0m"
+    result="\033[0;32mpassed\033[0m"
 else
-    result="\e[31mFAIL\e[0m"
+    result="\e[31mfailed\e[0m"
 fi
 
 # Check each user's minimum days between password changes
 awk -F : '(/^[^:]+:[^!*]/ && $4 < 1){print $1}' /etc/shadow | while read -r user; do
-    if [ "$result" == "\033[0;32mPASS\033[0m" ]; then
+    if [ "$result" == "\033[0;32mpassed\033[0m" ]; then
         result=$(check_user_min_days "$user")
     else
         break
@@ -47,7 +47,7 @@ awk -F : '(/^[^:]+:[^!*]/ && $4 < 1){print $1}' /etc/shadow | while read -r user
 done
 
 # Check all users for minimum days between password changes
-if [ "$result" == "\033[0;32mPASS\033[0m" ]; then
+if [ "$result" == "\033[0;32mpassed\033[0m" ]; then
     result=$(check_all_users_min_days)
 fi
 

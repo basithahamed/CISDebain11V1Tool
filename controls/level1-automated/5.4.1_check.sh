@@ -6,9 +6,9 @@ print_result() {
     local message=$2
 
     if [ "$status" == "fail" ]; then
-        echo -e "$message --> \e[31mFAIL\e[0m"
+        echo -e "$message --> \e[31mfailed\e[0m"
     else
-        echo -e "$message --> \e[32mPASS\e[0m"
+        echo -e "$message --> \033[0;32mpassed\033[0m"
     fi
 }
 

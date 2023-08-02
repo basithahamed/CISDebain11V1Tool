@@ -6,11 +6,11 @@ check_user_pass_warn_age() {
     local pass_warn_age=$(grep "^$user:[^!*]" /etc/shadow | awk -F: '{print $6}')
 
     if [ -z "$pass_warn_age" ]; then
-        echo -e "\033[0;31mFAIL\033[0m"
+        echo -e "\033[0;31mfailed\033[0m"
     elif [ "$pass_warn_age" -ge 7 ]; then
-        echo -e "\033[0;32mPASS\033[0m"
+        echo -e "\033[0;32mpassed\033[0m"
     else
-        echo -e "\033[0;31mFAIL\033[0m"
+        echo -e "\033[0;31mfailed\033[0m"
     fi
 }
 
@@ -26,23 +26,23 @@ check_all_users_pass_warn_age() {
     done < /etc/shadow
 
     if [ "$all_pass" == "true" ]; then
-        echo -e "\033[0;32mPASS\033[0m"
+        echo -e "\033[0;32mpassed\033[0m"
     else
-        echo -e "\033[0;31mFAIL\033[0m"
+        echo -e "\033[0;31mfailed\033[0m"
     fi
 }
 
 # Check PASS_WARN_AGE value in /etc/login.defs
 pass_warn_age_value=$(grep '^\s*PASS_WARN_AGE\s' /etc/login.defs | awk '{print $2}')
 if [ -z "$pass_warn_age_value" ] || [ "$pass_warn_age_value" -ge 7 ]; then
-    result="\033[0;32mPASS\033[0m"
+    result="\033[0;32mpassed\033[0m"
 else
-    result="\033[0;31mFAIL\033[0m"
+    result="\033[0;31mfailed\033[0m"
 fi
 
 # Check each user's password expiration warning days
 awk -F : '(/^[^:]+:[^!*]/ && $6 < 7){print $1}' /etc/shadow | while read -r user; do
-    if [ "$result" == "\033[0;32mPASS\033[0m" ]; then
+    if [ "$result" == "\033[0;32mpassed\033[0m" ]; then
         result=$(check_user_pass_warn_age "$user")
     else
         break
@@ -50,7 +50,7 @@ awk -F : '(/^[^:]+:[^!*]/ && $6 < 7){print $1}' /etc/shadow | while read -r user
 done
 
 # Check all users for password expiration warning days
-if [ "$result" == "\033[0;32mPASS\033[0m" ]; then
+if [ "$result" == "\033[0;32mpassed\033[0m" ]; then
     result=$(check_all_users_pass_warn_age)
 fi
 

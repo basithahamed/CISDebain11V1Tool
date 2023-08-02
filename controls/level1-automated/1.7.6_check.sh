@@ -13,12 +13,12 @@ check_issue_net_permissions() {
         local actual_permissions=$(stat -L -c "%a" "$issue_net_file")
 
         if [[ "$actual_uid" -eq "$expected_uid" && "$actual_gid" -eq "$expected_gid" && "$actual_permissions" -eq "$expected_permissions" ]]; then
-            echo -e "1.7.6 Ensure permissions on /etc/issue.net are configured --> \033[0;32mpass\033[0m"
+            echo -e "1.7.6 Ensure permissions on /etc/issue.net are configured --> \033[0;32mpassed\033[0m"
         else
-            echo -e "1.7.6 Ensure permissions on /etc/issue.net are configured --> \033[0;31mfail\033[0m"
+            echo -e "1.7.6 Ensure permissions on /etc/issue.net are configured --> \033[0;31mfailed\033[0m"
         fi
     else
-        echo -e "1.7.6 Ensure permissions on /etc/issue.net are configured --> \033[0;32mpass\033[0m (File not found)"
+        echo -e "1.7.6 Ensure permissions on /etc/issue.net are configured --> \033[0;32mpassed\033[0m (File not found)"
     fi
 }
 

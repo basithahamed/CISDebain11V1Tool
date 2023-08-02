@@ -13,10 +13,10 @@ check_mta_local_only() {
 # Main script execution
 {
   if check_mta_local_only; then
-    echo -e "\n2.2.15 Ensure mail transfer agent is configured for local-only mode --> \e[32mPASS\e[0m"
+    echo -e "\n2.2.15 Ensure mail transfer agent is configured for local-only mode --> \033[0;32mpassed\033[0m"
     echo -e "Mail Transfer Agent is configured for local-only mode.\n"
   else
-    echo -e "\n2.2.15 Ensure mail transfer agent is configured for local-only mode --> \e[31mFAIL\e[0m"
+    echo -e "\n2.2.15 Ensure mail transfer agent is configured for local-only mode --> \e[31mfailed\e[0m"
     echo -e "Mail Transfer Agent is not configured for local-only mode.\n"
   fi
 }

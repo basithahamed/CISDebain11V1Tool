@@ -6,9 +6,9 @@ audit_sgid_executables() {
     local sgid_files=$(find "$partition" -xdev -type f -perm -2000)
 
     if [ -z "$sgid_files" ]; then
-        echo -e "\e[32mPASS\e[0m"
+        echo -e "\033[0;32mpassed\033[0m"
     else
-        echo -e "\e[31mFAIL\e[0m"
+        echo -e "\e[31mfailed\e[0m"
         echo "SGID executables found:"
         echo "$sgid_files"
     fi
@@ -18,7 +18,7 @@ audit_sgid_executables() {
 partitions=$(df --local -P | awk '{if (NR!=1) print $6}')
 
 # Initialize a variable to track the overall result
-overall_result="\e[32mPASS\e[0m"
+overall_result="\033[0;32mpassed\033[0m"
 
 # Check each partition for SGID executables
 for partition in $partitions; do

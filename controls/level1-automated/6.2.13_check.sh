@@ -15,9 +15,9 @@ check_local_user_home_permissions() {
         done
 
         if [ -n "$output" ]; then
-            echo -e "\n6.2.13 Ensure local interactive user home directories are mode 750 or more restrictive --> \e[31mFAIL\e[0m:$output"
+            echo -e "\n6.2.13 Ensure local interactive user home directories are mode 750 or more restrictive --> \e[31mfailed\e[0m:$output"
         else
-            echo -e "\n6.2.13 Ensure local interactive user home directories are mode 750 or more restrictive --> \e[32mPASS\e[0m:\n- All user home directories are mode: \"$maxperm\" or more restrictive"
+            echo -e "\n6.2.13 Ensure local interactive user home directories are mode 750 or more restrictive --> \033[0;32mpassed\033[0m:\n- All user home directories are mode: \"$maxperm\" or more restrictive"
         fi
     )
 }

@@ -32,7 +32,7 @@ FAIL_COLOR="\033[0;31m"
 RESET_COLOR="\033[0m"
 
 if [ "$all_pass" = true ]; then
-    echo -e "5.5.2 Ensure system accounts are secured --> ${PASS_COLOR}pass${RESET_COLOR}"
+    echo -e "5.5.2 Ensure system accounts are secured --> ${PASS_COLOR}passed${RESET_COLOR}"
 else
-    echo -e "5.5.2 Ensure system accounts are secured --> ${FAIL_COLOR}fail${RESET_COLOR}"
+    echo -e "5.5.2 Ensure system accounts are secured --> ${FAIL_COLOR}failed${RESET_COLOR}"
 fi

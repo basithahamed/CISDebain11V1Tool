@@ -8,10 +8,10 @@ check_dhcp_server_installed() {
 # Main script execution
 {
   if check_dhcp_server_installed; then
-    echo -e "\n2.2.4 Ensure DHCP Server is not installed --> \e[31mFAIL\e[0m"
+    echo -e "\n2.2.4 Ensure DHCP Server is not installed --> \e[31mfailed\e[0m"
     echo -e "A DHCP server is installed.\n"
   else
-    echo -e "\n2.2.4 Ensure DHCP Server is not installed --> \e[32mPASS\e[0m"
+    echo -e "\n2.2.4 Ensure DHCP Server is not installed --> \033[0;32mpassed\033[0m"
     echo -e "No DHCP server is installed.\n"
   fi
 }

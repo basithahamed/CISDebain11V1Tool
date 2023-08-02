@@ -13,9 +13,9 @@ check_default_umask() {
     passing=true
 
     if [ "$passing" = true ]; then
-        echo -e "5.5.4 Ensure default user umask is 027 or more restrictive --> \033[0;32mpass\033[0m"
+        echo -e "5.5.4 Ensure default user umask is 027 or more restrictive --> \033[0;32mpassed\033[0m"
     else
-        echo -e "5.5.4 Ensure default user umask is 027 or more restrictive --> \033[0;31mfail\033[0m"
+        echo -e "5.5.4 Ensure default user umask is 027 or more restrictive --> \033[0;31mfailed\033[0m"
     fi
 }
 

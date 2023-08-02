@@ -10,9 +10,9 @@ check_home_directories_exist() {
     done
     
     if [ -z "$output" ]; then
-        echo -e "6.2.11 Ensure local interactive user home directories exist --> \e[32mPASS\e[0m: All local interactive users have a home directory"
+        echo -e "6.2.11 Ensure local interactive user home directories exist --> \033[0;32mpassed\033[0m: All local interactive users have a home directory"
     else
-        echo -e "6.2.11 Ensure local interactive user home directories exist --> \e[31mFAIL\e[0m:$output\n"
+        echo -e "6.2.11 Ensure local interactive user home directories exist --> \e[31mfailed\e[0m:$output\n"
     fi
 }
 

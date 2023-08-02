@@ -24,7 +24,7 @@ check_ipv6_enabled() {
   fi
 
   if [ -n "$output" ]; then
-    echo -e "\n3.1.1 Ensure system is checked to determine if IPv6 is enabled --> \033[0;31mFAIL\033[0m"
+    echo -e "\n3.1.1 Ensure system is checked to determine if IPv6 is enabled --> \033[0;31mfailed\033[0m"
     echo "$output"
     return 1
   else

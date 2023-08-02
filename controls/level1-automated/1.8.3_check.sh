@@ -34,13 +34,13 @@ check_gdm_disable_user_list() {
         fi
 
         if [ -z "$output2" ]; then
-            echo -e "1.8.3 Ensure GDM disable-user-list option is enabled --> \033[0;32mpass\033[0m\n$l_pkgoutput\n- Audit result:\n *** PASS ***\n$output\n"
+            echo -e "1.8.3 Ensure GDM disable-user-list option is enabled --> \033[0;32mpassed\033[0m\n$l_pkgoutput\n- Audit result:\n *** PASS ***\n$output\n"
         else
-            echo -e "1.8.3 Ensure GDM disable-user-list option is enabled --> \033[0;31mfail\033[0m\n$l_pkgoutput\n- Audit Result:\n *** FAIL ***\n$output2\n"
+            echo -e "1.8.3 Ensure GDM disable-user-list option is enabled --> \033[0;31mfailed\033[0m\n$l_pkgoutput\n- Audit Result:\n *** FAIL ***\n$output2\n"
             [ -n "$output" ] && echo -e "$output\n"
         fi
     else
-        echo -e "1.8.3 Ensure GDM disable-user-list option is enabled --> \033[0;32mpass\033[0m\n- GNOME Desktop Manager isn't installed\n- Recommendation is Not Applicable"
+        echo -e "1.8.3 Ensure GDM disable-user-list option is enabled --> \033[0;32mpassed\033[0m\n- GNOME Desktop Manager isn't installed\n- Recommendation is Not Applicable"
     fi
 }
 

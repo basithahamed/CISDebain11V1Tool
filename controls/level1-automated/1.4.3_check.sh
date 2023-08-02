@@ -8,12 +8,12 @@ check_single_user_mode_auth() {
     if [ -e "$single_user_mode_auth_file" ]; then
         # Check the content of the single user mode auth file for sulogin
         if grep -Eq 'SINGLE=/sbin/sulogin' "$single_user_mode_auth_file"; then
-            echo -e "1.4.3 Ensure authentication required for single user mode --> \033[0;32mpass\033[0m"
+            echo -e "1.4.3 Ensure authentication required for single user mode --> \033[0;32mpassed\033[0m"
         else
-            echo -e "1.4.3 Ensure authentication required for single user mode --> \033[0;31mfail\033[0m (Authentication not required)"
+            echo -e "1.4.3 Ensure authentication required for single user mode --> \033[0;31mfailed\033[0m (Authentication not required)"
         fi
     else
-        echo -e "1.4.3 Ensure authentication required for single user mode --> \033[0;31mfail\033[0m (Single user mode auth file not found)"
+        echo -e "1.4.3 Ensure authentication required for single user mode --> \033[0;31mfailed\033[0m (Single user mode auth file not found)"
     fi
 }
 

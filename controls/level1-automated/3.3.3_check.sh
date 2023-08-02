@@ -38,10 +38,10 @@ check_secure_icmp_redirects_not_accepted() {
     done
 
     if [ -z "$l_output2" ]; then
-        echo -e "\n3.3.3 Ensure secure ICMP redirects are not accepted --> \e[32mPASS\e[0m"
+        echo -e "\n3.3.3 Ensure secure ICMP redirects are not accepted --> \033[0;32mpassed\033[0m"
         echo -e "Secure ICMP redirects are not accepted.\n"
     else
-        echo -e "\n3.3.3 Ensure secure ICMP redirects are not accepted --> \e[31mFAIL\e[0m"
+        echo -e "\n3.3.3 Ensure secure ICMP redirects are not accepted --> \e[31mfailed\e[0m"
         echo -e "Secure ICMP redirects are accepted or not disabled.\n"
         [ -n "$l_output" ] && echo -e "Failed checks:\n$l_output\n"
         echo -e "Reason(s) for audit failure:\n$l_output2\n"

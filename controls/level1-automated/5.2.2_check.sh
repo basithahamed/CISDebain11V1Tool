@@ -21,9 +21,9 @@ check_ssh_key_permissions() {
         done
 
         if [ -z "$l_output" ]; then
-            echo -e "5.2.2 Ensure permissions on SSH private host key files are configured --> \e[32mPASS\e[0m\n"
+            echo -e "5.2.2 Ensure permissions on SSH private host key files are configured --> \033[0;32mpassed\033[0m"
         else
-            echo -e "5.2.2 Ensure permissions on SSH private host key files are configured --> \e[31mFAIL\e[0m$l_output\n"
+            echo -e "5.2.2 Ensure permissions on SSH private host key files are configured --> \e[31mfailed\e[0m$l_output\n"
         fi
     )
 }

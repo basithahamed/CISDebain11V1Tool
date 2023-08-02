@@ -6,9 +6,9 @@ check_ssh_x11_forwarding_disabled() {
     sshd_config_output=$(grep -Ei '^\s*X11Forwarding\s+yes\b' /etc/ssh/sshd_config)
 
     if [ -n "$sshd_output" ] && [ -z "$sshd_config_output" ]; then
-        echo -e "\n5.2.12 Ensure SSH X11 forwarding is disabled --> \e[32mPASS\e[0m\n"
+        echo -e "\n5.2.12 Ensure SSH X11 forwarding is disabled --> \033[0;32mpassed\033[0m"
     else
-        echo -e "\n5.2.12 Ensure SSH X11 forwarding is disabled --> \e[31mFAIL\e[0m\n"
+        echo -e "\n5.2.12 Ensure SSH X11 forwarding is disabled --> \e[31mfailed\e[0m\n"
     fi
 }
 

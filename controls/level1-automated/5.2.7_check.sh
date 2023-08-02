@@ -6,9 +6,9 @@ check_ssh_root_login_disabled() {
     sshd_config_output=$(grep -Ei '^\s*PermitRootLogin\s+no' /etc/ssh/sshd_config)
 
     if [ -n "$sshd_output" ] && [ -n "$sshd_config_output" ]; then
-        echo -e "\n5.2.7 Ensure SSH root login is disabled --> \e[32mPASS\e[0m\n"
+        echo -e "\n5.2.7 Ensure SSH root login is disabled --> \033[0;32mpassed\033[0m"
     else
-        echo -e "\n5.2.7 Ensure SSH root login is disabled --> \e[31mFAIL\e[0m\n"
+        echo -e "\n5.2.7 Ensure SSH root login is disabled --> \e[31mfailed\e[0m\n"
     fi
 }
 

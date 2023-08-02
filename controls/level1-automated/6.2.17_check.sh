@@ -15,9 +15,9 @@ check_local_users_dot_files() {
         done
 
         if [ -n "$output" ]; then
-            echo -e "\n6.2.17 Ensure local interactive user dot files are not group or world writable --> \e[31mFAIL\e[0m:\n$output\n"
+            echo -e "\n6.2.17 Ensure local interactive user dot files are not group or world writable --> \e[31mfailed\e[0m:\n$output\n"
         else
-            echo -e "\n6.2.17 Ensure local interactive user dot files are not group or world writable --> \e[32mPASS\e[0m: - All user home dot files are mode: \"$maxperm\" or more restrictive\n"
+            echo -e "\n6.2.17 Ensure local interactive user dot files are not group or world writable --> \033[0;32mpassed\033[0m: - All user home dot files are mode: \"$maxperm\" or more restrictive\n"
         fi
     )
 }

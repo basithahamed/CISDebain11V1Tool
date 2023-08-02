@@ -8,10 +8,10 @@ check_cups_installed() {
 # Main script execution
 {
   if check_cups_installed; then
-    echo -e "\n2.2.3 Ensure CUPS is not installed --> \e[31mFAIL\e[0m"
+    echo -e "\n2.2.3 Ensure CUPS is not installed --> \e[31mfailed\e[0m"
     echo -e "CUPS is installed.\n"
   else
-    echo -e "\n2.2.3 Ensure CUPS is not installed --> \e[32mPASS\e[0m"
+    echo -e "\n2.2.3 Ensure CUPS is not installed --> \033[0;32mpassed\033[0m"
     echo -e "CUPS is not installed.\n"
   fi
 }

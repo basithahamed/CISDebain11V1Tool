@@ -38,9 +38,9 @@ net.ipv4.conf.default.log_martians=1"
     done
 
     if [ -z "$l_output2" ]; then
-        echo -e "\n3.3.4 Ensure suspicious packets are logged --> \e[32mPASS\e[0m"
+        echo -e "\n3.3.4 Ensure suspicious packets are logged --> \033[0;32mpassed\033[0m"
     else
-        echo -e "\n3.3.4 Ensure suspicious packets are logged --> \e[31mFAIL\e[0m"
+        echo -e "\n3.3.4 Ensure suspicious packets are logged --> \e[31mfailed\e[0m"
         echo -e "\nReason(s) for audit failure:\n$l_output2\n"
         [ -n "$l_output" ] && echo -e "Correctly set:\n$l_output\n"
     fi

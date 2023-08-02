@@ -6,9 +6,9 @@ check_partition_for_ungrouped_files() {
     local ungrouped_files=$(find "$partition" -xdev -nogroup)
 
     if [ -z "$ungrouped_files" ]; then
-        echo -e "\e[32mPASS\e[0m"
+        echo -e "\033[0;32mpassed\033[0m"
     else
-        echo -e "\e[31mFAIL\e[0m"
+        echo -e "\e[31mfailed\e[0m"
     fi
 }
 
@@ -16,7 +16,7 @@ check_partition_for_ungrouped_files() {
 partitions=$(df --local -P | awk '{if (NR!=1) print $6}')
 
 # Initialize a variable to track the overall result
-overall_result="\e[32mPASS\e[0m"
+overall_result="\033[0;32mpassed\033[0m"
 
 # Check each partition for ungrouped files or directories
 for partition in $partitions; do

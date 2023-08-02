@@ -13,9 +13,9 @@ check_local_users_forward_files() {
         done
 
         if [ -z "$output" ]; then
-            echo -e "\n6.2.15 Ensure no local interactive user has .forward files --> \e[32mPASS\e[0m: - No local interactive users have \"$fname\" files in their home directory\n"
+            echo -e "\n6.2.15 Ensure no local interactive user has .forward files --> \033[0;32mpassed\033[0m: - No local interactive users have \"$fname\" files in their home directory\n"
         else
-            echo -e "\n6.2.15 Ensure no local interactive user has .forward files --> \e[31mFAIL\e[0m:\n$output\n"
+            echo -e "\n6.2.15 Ensure no local interactive user has .forward files --> \e[31mfailed\e[0m:\n$output\n"
         fi
     )
 }

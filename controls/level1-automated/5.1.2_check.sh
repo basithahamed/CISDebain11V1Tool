@@ -7,9 +7,9 @@ check_crontab_permissions() {
     local crontab_gid=$(stat -c "%G" /etc/crontab)
 
     if [[ "$crontab_permissions" == "rw-------" && "$crontab_uid" == "root" && "$crontab_gid" == "root" ]]; then
-        echo -e "\e[32mPASS\e[0m"
+        echo -e "\033[0;32mpassed\033[0m"
     else
-        echo -e "\e[31mFAIL\e[0m"
+        echo -e "\e[31mfailed\e[0m"
     fi
 }
 

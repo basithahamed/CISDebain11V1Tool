@@ -11,9 +11,9 @@ check_local_user_home_ownership() {
         done
 
         if [ -z "$output" ]; then
-            echo -e "\n6.2.12 Ensure local interactive users own their home directories --> \e[32mPASS\e[0m: All local interactive users own their home directories\n"
+            echo -e "\n6.2.12 Ensure local interactive users own their home directories --> \033[0;32mpassed\033[0m: All local interactive users own their home directories\n"
         else
-            echo -e "\n6.2.12 Ensure local interactive users own their home directories --> \e[31mFAIL\e[0m:\n$output\n"
+            echo -e "\n6.2.12 Ensure local interactive users own their home directories --> \e[31mfailed\e[0m:\n$output\n"
         fi
     )
 }

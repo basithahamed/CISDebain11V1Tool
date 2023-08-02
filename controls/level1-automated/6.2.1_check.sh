@@ -6,14 +6,14 @@ check_shadowed_password() {
     local password_field=$(grep "^$user:" /etc/passwd | awk -F: '{print $2}')
 
     if [ "$password_field" != "x" ]; then
-        echo -n -e "\e[31mFAIL\e[0m"
+        echo -n -e "\e[31mfailed\e[0m"
     else
-        echo -n -e "\e[32mPASS\e[0m"
+        echo -n -e "\033[0;32mpassed\033[0m"
     fi
 }
 
 # Initialize a variable to track the overall result
-overall_result="PASS"
+overall_result="passed"
 
 # Check each user in /etc/passwd for shadowed passwords
 while IFS=: read -r user _; do

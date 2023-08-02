@@ -60,13 +60,13 @@ check_gdm_screen_lock() {
     fi
 
     if [ -z "$l_output2" ]; then
-      echo -e "1.8.4 Ensure GDM screen locks when the user is idle --> \e[32mPASS\e[0m$l_output"
+      echo -e "1.8.4 Ensure GDM screen locks when the user is idle --> \033[0;32mpassed\033[0m$l_output"
     else
-      echo -e "1.8.4 Ensure GDM screen locks when the user is idle --> \e[31mFAIL\e[0m$l_output2"
+      echo -e "1.8.4 Ensure GDM screen locks when the user is idle --> \e[31mfailed\e[0m$l_output2"
       [ -n "$l_output" ] && echo -e "- Correctly set:$l_output"
     fi
   else
-    echo -e "1.8.4 Ensure GDM screen locks when the user is idle --> \e[32mPASS\e[0m\n- GNOME Desktop Manager isn't installed\n- Recommendation is Not Applicable"
+    echo -e "1.8.4 Ensure GDM screen locks when the user is idle --> \033[0;32mpassed\033[0m- GNOME Desktop Manager isn't installed\n- Recommendation is Not Applicable"
   fi
 }
 
@@ -74,5 +74,5 @@ check_gdm_screen_lock() {
 if check_gdm_installed; then
   check_gdm_screen_lock
 else
-  echo -e "1.8.4 Ensure GDM screen locks when the user is idle --> \e[32mPASS\e[0m\n- GNOME Desktop Manager isn't installed\n- Recommendation is Not Applicable"
+  echo -e "1.8.4 Ensure GDM screen locks when the user is idle --> \033[0;32mpassed\033[0m- GNOME Desktop Manager isn't installed\n- Recommendation is Not Applicable"
 fi

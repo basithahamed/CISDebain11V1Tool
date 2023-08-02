@@ -6,9 +6,9 @@ print_result() {
     local message=$2
 
     if [ "$status" == "fail" ]; then
-        echo -e "$message --> \e[31mFail\e[0m"
+        echo -e "$message --> \e[31mfailed\e[0m"
     else
-        echo -e "$message --> \e[32mPass\e[0m"
+        echo -e "$message --> \033[0;32mpassed\033[0m"
     fi
 }
 
@@ -65,11 +65,11 @@ fi
 print_result "$overall_result" "5.4.2 Ensure lockout for failed password attempts is configured"
 
 # if [ "$overall_result" == "pass" ]; then
-#     echo -e "  Common auth --> \e[32mPass\e[0m"
-#     echo -e "  Common account --> \e[32mPass\e[0m"
-#     echo -e "  Fail lock configuration --> \e[32mPass\e[0m"
+#     echo -e "  Common auth --> \033[0;32mpassed\033[0m"
+#     echo -e "  Common account --> \033[0;32mpassed\033[0m"
+#     echo -e "  Fail lock configuration --> \033[0;32mpassed\033[0m"
 # else
-#     echo -e "  Common auth --> \e[31mFail\e[0m"
-#     echo -e "  Common account --> \e[31mFail\e[0m"
-#     echo -e "  Fail lock configuration --> \e[31mFail\e[0m"
+#     echo -e "  Common auth --> \e[31mfailed\e[0m"
+#     echo -e "  Common account --> \e[31mfailed\e[0m"
+#     echo -e "  Fail lock configuration --> \e[31mfailed\e[0m"
 # fi

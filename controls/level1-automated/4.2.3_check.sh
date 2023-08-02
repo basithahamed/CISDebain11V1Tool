@@ -64,7 +64,7 @@ check_log_permissions_ownership() {
         echo -e "4.2.3 Ensure all logfiles have appropriate permissions and ownership --> \e[32m- PASS\n- All files in \"/var/log/\" have appropriate permissions and ownership\e[0m"
     else
         # print the reason why we are failing
-        echo -e "4.2.3 Ensure all logfiles have appropriate permissions and ownership --> \e[31mFAIL\e[0m$output"
+        echo -e "4.2.3 Ensure all logfiles have appropriate permissions and ownership --> \e[31mfailed\e[0m$output"
     fi
     echo -e "- End check - logfiles have appropriate permissions and ownership\n"
 }

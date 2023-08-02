@@ -35,11 +35,11 @@ check_wireless_disabled() {
 
 # Main script execution
 if check_wireless_disabled; then
-  echo -e "\n3.1.2 Ensure wireless interfaces are disabled --> \e[32mPASS\e[0m"
+  echo -e "\n3.1.2 Ensure wireless interfaces are disabled --> \033[0;32mpassed\033[0m"
   echo "No wireless interfaces are active on the system."
   exit 0
 else
-  echo -e "\n3.1.2 Ensure wireless interfaces are disabled --> \e[31mFAIL\e[0m"
+  echo -e "\n3.1.2 Ensure wireless interfaces are disabled --> \e[31mfailed\e[0m"
   echo "At least one wireless interface is enabled or not disabled."
   exit 1
 fi

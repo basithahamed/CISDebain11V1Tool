@@ -12,9 +12,9 @@ NC='\033[0m' # No Color
 
 # Main script execution
 if check_rpc_installed; then
-  echo -e "\n2.3.6 Ensure RPC is not installed --> ${RED}FAIL${NC}"
+  echo -e "\n2.3.6 Ensure RPC is not installed --> ${RED}failed${NC}"
   echo "RPC is installed."
 else
-  echo -e "\n2.3.6 Ensure RPC is not installed --> ${GREEN}PASS${NC}"
+  echo -e "\n2.3.6 Ensure RPC is not installed --> ${GREEN}passed${NC}"
   echo "RPC is not installed."
 fi

@@ -5,12 +5,12 @@ check_gpg_keys() {
     if [ -n "$(command -v gpg)" ]; then
         gpg_keys=$(gpg --list-keys)
         if [ -n "$gpg_keys" ]; then
-            echo -e "1.2.2 Ensure GPG keys are configured --> \033[0;32mpass\033[0m"
+            echo -e "1.2.2 Ensure GPG keys are configured --> \033[0;32mpassed\033[0m"
         else
-            echo -e "1.2.2 Ensure GPG keys are configured --> \033[0;31mfail\033[0m (No GPG keys found)"
+            echo -e "1.2.2 Ensure GPG keys are configured --> \033[0;31mfailed\033[0m (No GPG keys found)"
         fi
     else
-        echo -e "1.2.2 Ensure GPG keys are configured --> \033[0;31mfail\033[0m (GPG not installed)"
+        echo -e "1.2.2 Ensure GPG keys are configured --> \033[0;31mfailed\033[0m (GPG not installed)"
     fi
 }
 

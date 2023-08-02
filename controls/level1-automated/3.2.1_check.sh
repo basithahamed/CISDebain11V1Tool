@@ -39,11 +39,11 @@ check_packet_redirect_sending_disabled() {
 
     # Report results. If no failures output in l_output2, we pass
     if [ -z "$l_output2" ]; then
-        echo -e "\n3.2.1 Ensure packet redirect sending is disabled --> \e[32mPASS\e[0m"
+        echo -e "\n3.2.1 Ensure packet redirect sending is disabled --> \033[0;32mpassed\033[0m"
         echo -e "Packet redirect sending is disabled.\n"
         return 0
     else
-        echo -e "\n3.2.1 Ensure packet redirect sending is disabled --> \e[31mFAIL\e[0m"
+        echo -e "\n3.2.1 Ensure packet redirect sending is disabled --> \e[31mfailed\e[0m"
         echo -e "Packet redirect sending is enabled or not disabled.\n"
         [ -n "$l_output" ] && echo -e "\n$l_output\n"
         return 1

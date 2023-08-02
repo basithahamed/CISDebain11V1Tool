@@ -7,9 +7,9 @@ check_cron_monthly_permissions() {
     local cron_monthly_gid=$(stat -c "%G" /etc/cron.monthly)
 
     if [[ "$cron_monthly_permissions" == "drwx------" && "$cron_monthly_uid" == "root" && "$cron_monthly_gid" == "root" ]]; then
-        echo -e "\n5.1.6 Ensure permissions on /etc/cron.monthly are configured --> \e[32mPASS\e[0m\n"
+        echo -e "\n5.1.6 Ensure permissions on /etc/cron.monthly are configured --> \033[0;32mpassed\033[0m"
     else
-        echo -e "\n5.1.6 Ensure permissions on /etc/cron.monthly are configured --> \e[31mFAIL\e[0m\n"
+        echo -e "\n5.1.6 Ensure permissions on /etc/cron.monthly are configured --> \e[31mfailed\e[0m\n"
     fi
 }
 

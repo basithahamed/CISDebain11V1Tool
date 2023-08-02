@@ -16,7 +16,7 @@ if check_telnet_client_installed; then
   echo "Telnet client is installed."
   exit 1
 else
-  echo -e "\n2.3.4 Ensure telnet client is not installed --> ${GREEN}PASS${NC}"
+  echo -e "\n2.3.4 Ensure telnet client is not installed --> ${GREEN}passed${NC}"
   echo "Telnet client is not installed."
   exit 0
 fi

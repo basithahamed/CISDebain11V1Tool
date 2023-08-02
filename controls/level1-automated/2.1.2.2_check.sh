@@ -10,10 +10,10 @@ check_chrony_user() {
   local chrony_user=$(ps -ef | awk '(/[c]hronyd/ && $1!="_chrony") { print $1 }')
 
   if [ -z "$chrony_user" ]; then
-    echo -e "\n2.1.2.2 Ensure chrony is running as user _chrony --> \e[32mPASS\e[0m"
+    echo -e "\n2.1.2.2 Ensure chrony is running as user _chrony --> \033[0;32mpassed\033[0m"
     echo -e "Chronyd service is running as the _chrony user.\n"
   else
-    echo -e "\n2.1.2.2 Ensure chrony is running as user _chrony --> \e[31mFAIL\e[0m"
+    echo -e "\n2.1.2.2 Ensure chrony is running as user _chrony --> \e[31mfailed\e[0m"
     echo -e "Chronyd service is not running as the _chrony user.\n"
   fi
 }

@@ -22,9 +22,9 @@ check_cron_restrictions() {
 
     # Check if both conditions are pass, then show as PASS, otherwise show as FAIL in red color
     if [[ "$deny_status" == "PASS" && "$allow_status" == "PASS" ]]; then
-        echo -e "\n5.1.8 Ensure cron is restricted to authorized users --> \e[32mPASS\e[0m\n"
+        echo -e "\n5.1.8 Ensure cron is restricted to authorized users --> \033[0;32mpassed\033[0m"
     else
-        echo -e "\n5.1.8 Ensure cron is restricted to authorized users --> \e[31mFAIL\e[0m\n"
+        echo -e "\n5.1.8 Ensure cron is restricted to authorized users --> \e[31mfailed\e[0m\n"
     fi
 }
 

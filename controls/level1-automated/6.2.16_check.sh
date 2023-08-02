@@ -11,9 +11,9 @@ check_local_users_rhosts_files() {
         done
 
         if [ -z "$output" ]; then
-            echo -e "\n6.2.16 Ensure no local interactive user has .rhosts files --> \e[32mPASS\e[0m: - No local interactive users have \"$fname\" files in their home directory\n"
+            echo -e "\n6.2.16 Ensure no local interactive user has .rhosts files --> \033[0;32mpassed\033[0m: - No local interactive users have \"$fname\" files in their home directory\n"
         else
-            echo -e "\n6.2.16 Ensure no local interactive user has .rhosts files --> \e[31mFAIL\e[0m:\n$output\n"
+            echo -e "\n6.2.16 Ensure no local interactive user has .rhosts files --> \e[31mfailed\e[0m:\n$output\n"
         fi
     )
 }

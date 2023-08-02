@@ -37,9 +37,9 @@ check_ignore_broadcast_icmp() {
     done
 
     if [ -z "$l_output2" ]; then
-        echo -e "\n3.3.5 Ensure broadcast ICMP requests are ignored --> \e[32mPASS\e[0m"
+        echo -e "\n3.3.5 Ensure broadcast ICMP requests are ignored --> \033[0;32mpassed\033[0m"
     else
-        echo -e "\n3.3.5 Ensure broadcast ICMP requests are ignored --> \e[31mFAIL\e[0m"
+        echo -e "\n3.3.5 Ensure broadcast ICMP requests are ignored --> \e[31mfailed\e[0m"
         echo -e "\nReason(s) for audit failure:\n$l_output2\n"
         [ -n "$l_output" ] && echo -e "Correctly set:\n$l_output\n"
     fi

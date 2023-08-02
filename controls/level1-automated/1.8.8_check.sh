@@ -72,9 +72,9 @@ check_gdm_autorun_never() {
 
   # Check if GNOME Desktop Manager is installed
   if check_gdm_installed; then
-    [ -n "$l_output2" ] && echo -e "1.8.8 Ensure GDM autorun-never is enabled --> \e[31mFAIL\e[0m$l_output2" || echo -e "1.8.8 Ensure GDM autorun-never is enabled --> \e[32mPASS\e[0m$l_output"
+    [ -n "$l_output2" ] && echo -e "1.8.8 Ensure GDM autorun-never is enabled --> \e[31mfailed\e[0m$l_output2" || echo -e "1.8.8 Ensure GDM autorun-never is enabled --> \033[0;32mpassed\033[0m$l_output"
   else
-    echo -e "1.8.8 Ensure GDM autorun-never is enabled --> \e[32mPASS\e[0m\n- GNOME Desktop Manager isn't installed\n- Recommendation is Not Applicable"
+    echo -e "1.8.8 Ensure GDM autorun-never is enabled --> \033[0;32mpassed\033[0m- GNOME Desktop Manager isn't installed\n- Recommendation is Not Applicable"
   fi
 
   # Update dconf database if the dconf command is available

@@ -18,11 +18,11 @@ check_ldap_server_installed() {
 # Main script execution
 {
   if check_ldap_server_installed; then
-    echo -e "\n2.2.5 Ensure LDAP Server is not installed --> \e[31mFAIL\e[0m"
+    echo -e "\n2.2.5 Ensure LDAP Server is not installed --> \e[31mfailed\e[0m"
     echo -e "An LDAP server is installed:\n"
     dpkg-query -W -f='${binary:Package}\t${Status}\t${db:Status-Status}\n' slapd 389-ds-base 2>/dev/null
   else
-    echo -e "\n2.2.5 Ensure LDAP Server is not installed --> \e[32mPASS\e[0m"
+    echo -e "\n2.2.5 Ensure LDAP Server is not installed --> \033[0;32mpassed\033[0m"
     echo -e "No LDAP server is installed.\n"
   fi
 }

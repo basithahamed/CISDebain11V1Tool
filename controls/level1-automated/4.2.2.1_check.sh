@@ -6,9 +6,9 @@ check_systemd_journal_remote_installed() {
     local installed_status=$(echo "$package_status" | awk '{print $3}')
 
     if [ "$installed_status" = "installed" ]; then
-        echo -e "\n4.2.1.1.1 Ensure systemd-journal-remote is installed --> \e[32mPASS\e[0m"
+        echo -e "\n4.2.1.1.1 Ensure systemd-journal-remote is installed --> \033[0;32mpassed\033[0m"
     else
-        echo -e "\n4.2.1.1.1 Ensure systemd-journal-remote is installed --> \e[31mFAIL\e[0m"
+        echo -e "\n4.2.1.1.1 Ensure systemd-journal-remote is installed --> \e[31mfailed\e[0m"
         echo -e "Package status: $package_status\n"
     fi
 }

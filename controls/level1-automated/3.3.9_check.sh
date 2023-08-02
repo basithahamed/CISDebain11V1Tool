@@ -33,10 +33,10 @@ check_ipv6_router_advertisements() {
     done
 
     if [ -z "$l_output2" ]; then
-        echo -e "3.3.9 Ensure IPv6 router advertisements are not accepted - \e[32mPass\e[0m"
+        echo -e "3.3.9 Ensure IPv6 router advertisements are not accepted - \033[0;32mpassed\033[0m"
         [ -n "$l_output" ] && echo -e "Details:\n$l_output\n"
     else
-        echo -e "3.3.9 Ensure IPv6 router advertisements are not accepted - \e[31mFail\e[0m"
+        echo -e "3.3.9 Ensure IPv6 router advertisements are not accepted - \e[31mfailed\e[0m"
         echo -e "\nReason(s) for audit failure:\n$l_output2\n"
         [ -n "$l_output" ] && echo -e "Details:\n$l_output\n"
     fi

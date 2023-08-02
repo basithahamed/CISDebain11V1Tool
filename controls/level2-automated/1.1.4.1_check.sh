@@ -6,7 +6,7 @@ check_separate_partition_vartmp() {
     if [ -n "$vartmp_mount_info" ]; then
         echo -e "1.1.4.1 Ensure separate partition exists for /var/tmp --> \033[0;32mpass\033[0m"
     else
-        echo -e "1.1.4.1 Ensure separate partition exists for /var/tmp --> \033[0;31mfail\033[0m"
+        echo -e "1.1.4.1 Ensure separate partition exists for /var/tmp --> \033[0;31mfailed\033[0m"
     fi
 }
 

@@ -6,9 +6,9 @@ check_ssh_login_grace_time() {
     sshd_config_output=$(grep -Ei '^\s*LoginGraceTime\s+(0|6[1-9]|[7-9][0-9]|[1-9][0-9][0-9]+|[^1]m)' /etc/ssh/sshd_config)
 
     if echo "$sshd_output" | grep -qi "logingracetime 60" && [ -z "$sshd_config_output" ]; then
-        echo -e "\n5.2.21 Ensure SSH LoginGraceTime is set to one minute or less --> \e[32mPASS\e[0m\n"
+        echo -e "\n5.2.21 Ensure SSH LoginGraceTime is set to one minute or less --> \033[0;32mpassed\033[0m"
     else
-        echo -e "\n5.2.21 Ensure SSH LoginGraceTime is set to one minute or less --> \e[31mFAIL\e[0m\n"
+        echo -e "\n5.2.21 Ensure SSH LoginGraceTime is set to one minute or less --> \e[31mfailed\e[0m\n"
     fi
 }
 

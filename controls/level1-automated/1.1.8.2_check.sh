@@ -4,9 +4,9 @@
 check_noexec_option_dev_shm() {
     mount_options=$(grep -E '\s/dev/shm\s' /etc/fstab | awk '{print $4}')
     if [[ "$mount_options" == *"noexec"* ]]; then
-        echo -e "1.1.8.2 Ensure noexec option set on /dev/shm partition --> \033[0;32mpass\033[0m"
+        echo -e "1.1.8.2 Ensure noexec option set on /dev/shm partition --> \033[0;32mpassed\033[0m"
     else
-        echo -e "1.1.8.2 Ensure noexec option set on /dev/shm partition --> \033[0;31mfail\033[0m"
+        echo -e "1.1.8.2 Ensure noexec option set on /dev/shm partition --> \033[0;31mfailed\033[0m"
     fi
 }
 

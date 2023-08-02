@@ -6,9 +6,9 @@ check_ssh_ignore_rhosts_enabled() {
     sshd_config_output=$(grep -Ei '^\s*IgnoreRhosts\s+no\b' /etc/ssh/sshd_config)
 
     if [ -n "$sshd_output" ] && [ -z "$sshd_config_output" ]; then
-        echo -e "\n5.2.11 Ensure SSH IgnoreRhosts is enabled --> \e[32mPASS\e[0m\n"
+        echo -e "\n5.2.11 Ensure SSH IgnoreRhosts is enabled --> \033[0;32mpassed\033[0m"
     else
-        echo -e "\n5.2.11 Ensure SSH IgnoreRhosts is enabled --> \e[31mFAIL\e[0m\n"
+        echo -e "\n5.2.11 Ensure SSH IgnoreRhosts is enabled --> \e[31mfailed\e[0m\n"
     fi
 }
 

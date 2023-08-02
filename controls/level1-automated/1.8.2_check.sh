@@ -50,15 +50,15 @@ check_gdm_configuration() {
             l_output2="$l_output2\n- The \"banner-message-enable\" option isn't configured"
         fi
     else
-        echo -e "1.8.2 Ensure GDM login banner is configured --> \033[0;32mpass\033[0m\n- GNOME Desktop Manager isn't installed\n- Recommendation is Not Applicable"
+        echo -e "1.8.2 Ensure GDM login banner is configured --> \033[0;32mpassed\033[0m\n- GNOME Desktop Manager isn't installed\n- Recommendation is Not Applicable"
         return
     fi
 
     # Report results. If no failures output in l_output2, we pass
     if [ -z "$l_output2" ]; then
-        echo -e "1.8.2 Ensure GDM login banner is configured --> \033[0;32mpass\033[0m\n$l_output\n"
+        echo -e "1.8.2 Ensure GDM login banner is configured --> \033[0;32mpassed\033[0m\n$l_output\n"
     else
-        echo -e "1.8.2 Ensure GDM login banner is configured --> \033[0;31mfail\033[0m\nReason(s) for audit failure:\n$l_output2\n"
+        echo -e "1.8.2 Ensure GDM login banner is configured --> \033[0;31mfailed\033[0m\nReason(s) for audit failure:\n$l_output2\n"
         [ -n "$l_output" ] && echo -e "Correctly set:\n$l_output\n"
     fi
 }

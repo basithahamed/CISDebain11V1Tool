@@ -13,11 +13,11 @@ check_nfs_installed() {
 # Main script execution
 {
   if check_nfs_installed; then
-    echo -e "\n2.2.6 Ensure NFS is not installed --> \e[31mFAIL\e[0m"
+    echo -e "\n2.2.6 Ensure NFS is not installed --> \e[31mfailed\e[0m"
     echo -e "The NFS server package (nfs-kernel-server) is installed:\n"
     dpkg-query -W -f='${binary:Package}\t${Status}\t${db:Status-Status}\n' nfs-kernel-server 2>/dev/null
   else
-    echo -e "\n2.2.6 Ensure NFS is not installed --> \e[32mPASS\e[0m"
+    echo -e "\n2.2.6 Ensure NFS is not installed --> \033[0;32mpassed\033[0m"
     echo -e "The NFS server package (nfs-kernel-server) is not installed.\n"
   fi
 }

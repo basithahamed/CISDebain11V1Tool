@@ -6,9 +6,9 @@ check_ssh_access_limit() {
     sshd_config_output=$(grep -Pi '^\h*(allow|deny)(users|groups)\h+\H+(\h+.*)?$' /etc/ssh/sshd_config)
 
     if [ -n "$sshd_output" ] || [ -n "$sshd_config_output" ]; then
-        echo -e "\n5.2.4 Ensure SSH access is limited --> \e[32mPASS\e[0m\n"
+        echo -e "\n5.2.4 Ensure SSH access is limited --> \033[0;32mpassed\033[0m"
     else
-        echo -e "\n5.2.4 Ensure SSH access is limited --> \e[31mFAIL\e[0m\n"
+        echo -e "\n5.2.4 Ensure SSH access is limited --> \e[31mfailed\e[0m\n"
     fi
 }
 

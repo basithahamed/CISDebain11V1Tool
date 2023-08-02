@@ -19,7 +19,7 @@ done
 
 # Print the final result
 if [ $? -eq 0 ]; then
-    echo -e "5.5.1.5 Ensure all users last password change date is in the past --> \033[0;32mPASS\033[0m"
+    echo -e "5.5.1.5 Ensure all users last password change date is in the past --> \033[0;32mpassed\033[0m"
 else
-    echo -e "5.5.1.5 Ensure all users last password change date is in the past --> \033[0;31mFAIL\033[0m"
+    echo -e "5.5.1.5 Ensure all users last password change date is in the past --> \033[0;31mfailed\033[0m"
 fi

@@ -16,9 +16,9 @@ check_rsyslog_no_remote_logs() {
     fi
 
     if ! $old_format_found && ! $new_format_found; then
-        echo -e "\n4.2.7 Ensure rsyslog is not configured to receive logs from a remote client --> \e[32mPASS\e[0m"
+        echo -e "\n4.2.7 Ensure rsyslog is not configured to receive logs from a remote client --> \033[0;32mpassed\033[0m"
     else
-        echo -e "\n4.2.7 Ensure rsyslog is not configured to receive logs from a remote client --> \e[31mFAIL\e[0m"
+        echo -e "\n4.2.7 Ensure rsyslog is not configured to receive logs from a remote client --> \e[31mfailed\e[0m"
     fi
 }
 

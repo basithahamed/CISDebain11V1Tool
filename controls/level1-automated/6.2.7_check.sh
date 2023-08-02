@@ -12,7 +12,7 @@ result=$(check_duplicate_user_names)
 
 # Check if the result is empty
 if [ -z "$result" ]; then
-    echo -e "6.2.7 Ensure no duplicate user names exist --> \e[32mPASS\e[0m"
+    echo -e "6.2.7 Ensure no duplicate user names exist --> \033[0;32mpassed\033[0m"
 else
-    echo -e "6.2.7 Ensure no duplicate user names exist --> \e[31mFAIL\e[0m"
+    echo -e "6.2.7 Ensure no duplicate user names exist --> \e[31mfailed\e[0m"
 fi

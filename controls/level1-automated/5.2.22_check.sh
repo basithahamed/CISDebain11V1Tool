@@ -9,9 +9,9 @@ check_ssh_idle_timeout() {
     count_max=$(echo "$sshd_count_max" | awk '{print $2}')
 
     if [ "$interval" -gt 0 ] && [ "$count_max" -gt 0 ]; then
-        echo -e "\n5.2.22 Ensure SSH Idle Timeout Interval is configured --> \e[32mPASS\e[0m\n"
+        echo -e "\n5.2.22 Ensure SSH Idle Timeout Interval is configured --> \033[0;32mpassed\033[0m"
     else
-        echo -e "\n5.2.22 Ensure SSH Idle Timeout Interval is configured --> \e[31mFAIL\e[0m\n"
+        echo -e "\n5.2.22 Ensure SSH Idle Timeout Interval is configured --> \e[31mfailed\e[0m\n"
     fi
 }
 

@@ -7,7 +7,7 @@ check_nonessential_services() {
 
   for service in "${nonessential_services[@]}"; do
     if echo "$ss_output" | grep -Eq "\s$service\s"; then
-      echo -e "\n2.4 Ensure $service service is removed or masked --> \033[0;31mFAIL\033[0m"
+      echo -e "\n2.4 Ensure $service service is removed or masked --> \033[0;31mfailed\033[0m"
       echo "$service service is running."
       return 1
     fi

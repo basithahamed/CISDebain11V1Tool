@@ -71,9 +71,9 @@ check_gdm_automatic_mounting() {
 
   # Check if GNOME Desktop Manager is installed
   if check_gdm_installed; then
-    [ -n "$l_output2" ] && echo -e "1.8.6 Ensure GDM automatic mounting of removable media is disabled --> \e[31mFAIL\e[0m$l_output2" || echo -e "1.8.6 Ensure GDM automatic mounting of removable media is disabled --> \e[32mPASS\e[0m$l_output"
+    [ -n "$l_output2" ] && echo -e "1.8.6 Ensure GDM automatic mounting of removable media is disabled --> \e[31mfailed\e[0m$l_output2" || echo -e "1.8.6 Ensure GDM automatic mounting of removable media is disabled --> \033[0;32mpassed\033[0m$l_output"
   else
-    echo -e "1.8.6 Ensure GDM automatic mounting of removable media is disabled --> \e[32mPASS\e[0m\n- GNOME Desktop Manager isn't installed\n- Recommendation is Not Applicable"
+    echo -e "1.8.6 Ensure GDM automatic mounting of removable media is disabled --> \033[0;32mpassed\033[0m- GNOME Desktop Manager isn't installed\n- Recommendation is Not Applicable"
   fi
 }
 

@@ -39,8 +39,8 @@ check_systemd_timesyncd_enabled() {
   fi
 
   if [ "$l_tsd" = "none" ] || [ "$l_tsd" = "chrony" ] || [ "$l_tsd" = "ntp" ] || [ "$l_tsd" = "sdtd" ]; then
-    echo -e "\n2.1.1.1 Ensure a single time synchronization daemon is in use --> \e[32mPASS\e[0m$output\n"
+    echo -e "\n2.1.1.1 Ensure a single time synchronization daemon is in use --> \033[0;32mpassed\033[0m$output\n"
   else
-    echo -e "\n2.1.1.1 Ensure a single time synchronization daemon is in use --> \e[31mFAIL\e[0m$output\n"
+    echo -e "\n2.1.1.1 Ensure a single time synchronization daemon is in use --> \e[31mfailed\e[0m$output\n"
   fi
 }

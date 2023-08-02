@@ -6,7 +6,7 @@ check_separate_partition_var() {
     if [ "$var_mount_point" != "/" ]; then
         echo -e "1.1.3.1 Ensure separate partition exists for /var --> \033[0;32mpass\033[0m"
     else
-        echo -e "1.1.3.1 Ensure separate partition exists for /var --> \033[0;31mfail\033[0m"
+        echo -e "1.1.3.1 Ensure separate partition exists for /var --> \033[0;31mfailed\033[0m"
     fi
 }
 

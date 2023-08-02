@@ -8,10 +8,10 @@ check_squid_installed() {
 # Main script execution
 {
   if check_squid_installed; then
-    echo -e "\n2.2.12 Ensure HTTP Proxy Server is not installed --> \e[31mFAIL\e[0m"
+    echo -e "\n2.2.12 Ensure HTTP Proxy Server is not installed --> \e[31mfailed\e[0m"
     echo -e "The Squid package is installed.\n"
   else
-    echo -e "\n2.2.12 Ensure HTTP Proxy Server is not installed --> \e[32mPASS\e[0m"
+    echo -e "\n2.2.12 Ensure HTTP Proxy Server is not installed --> \033[0;32mpassed\033[0m"
     echo -e "Squid HTTP Proxy Server is not installed.\n"
   fi
 }
