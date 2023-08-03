@@ -1,3 +1,0 @@
-1.9 Ensure updates, patches, and additional security software are installed --> [31mfailed[0m
-2.1.2 Ensure chrony is configured with authorized timeserver --> [31mfailed[0m
-4.2.2.5 Ensure logging is configured --> [31mfailed[0m
